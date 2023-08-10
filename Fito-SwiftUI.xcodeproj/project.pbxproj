@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DC9C63FF2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C63FE2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift */; };
+		DC9C64012A855D4B0098B2B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C64002A855D4B0098B2B0 /* ContentView.swift */; };
+		DC9C64032A855D4B0098B2B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC9C64022A855D4B0098B2B0 /* Assets.xcassets */; };
+		DC9C64062A855D4B0098B2B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC9C64052A855D4B0098B2B0 /* Preview Assets.xcassets */; };
+		DC9C64102A855D4B0098B2B0 /* Fito_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C640F2A855D4B0098B2B0 /* Fito_SwiftUITests.swift */; };
+		DC9C641A2A855D4C0098B2B0 /* Fito_SwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C64192A855D4C0098B2B0 /* Fito_SwiftUIUITests.swift */; };
+		DC9C641C2A855D4C0098B2B0 /* Fito_SwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C641B2A855D4C0098B2B0 /* Fito_SwiftUIUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DC9C640C2A855D4B0098B2B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC9C63F32A855D4A0098B2B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC9C63FA2A855D4B0098B2B0;
+			remoteInfo = "Fito-SwiftUI";
+		};
+		DC9C64162A855D4C0098B2B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DC9C63F32A855D4A0098B2B0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DC9C63FA2A855D4B0098B2B0;
+			remoteInfo = "Fito-SwiftUI";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DC9C63FB2A855D4B0098B2B0 /* Fito-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fito-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC9C63FE2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fito_SwiftUIApp.swift; sourceTree = "<group>"; };
+		DC9C64002A855D4B0098B2B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DC9C64022A855D4B0098B2B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DC9C64052A855D4B0098B2B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DC9C640B2A855D4B0098B2B0 /* Fito-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fito-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC9C640F2A855D4B0098B2B0 /* Fito_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fito_SwiftUITests.swift; sourceTree = "<group>"; };
+		DC9C64152A855D4C0098B2B0 /* Fito-SwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fito-SwiftUIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC9C64192A855D4C0098B2B0 /* Fito_SwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fito_SwiftUIUITests.swift; sourceTree = "<group>"; };
+		DC9C641B2A855D4C0098B2B0 /* Fito_SwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fito_SwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DC9C63F82A855D4B0098B2B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC9C64082A855D4B0098B2B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC9C64122A855D4C0098B2B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DC9C63F22A855D4A0098B2B0 = {
+			isa = PBXGroup;
+			children = (
+				DC9C63FD2A855D4B0098B2B0 /* Fito-SwiftUI */,
+				DC9C640E2A855D4B0098B2B0 /* Fito-SwiftUITests */,
+				DC9C64182A855D4C0098B2B0 /* Fito-SwiftUIUITests */,
+				DC9C63FC2A855D4B0098B2B0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DC9C63FC2A855D4B0098B2B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DC9C63FB2A855D4B0098B2B0 /* Fito-SwiftUI.app */,
+				DC9C640B2A855D4B0098B2B0 /* Fito-SwiftUITests.xctest */,
+				DC9C64152A855D4C0098B2B0 /* Fito-SwiftUIUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DC9C63FD2A855D4B0098B2B0 /* Fito-SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				DC9C63FE2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift */,
+				DC9C64002A855D4B0098B2B0 /* ContentView.swift */,
+				DC9C64022A855D4B0098B2B0 /* Assets.xcassets */,
+				DC9C64042A855D4B0098B2B0 /* Preview Content */,
+			);
+			path = "Fito-SwiftUI";
+			sourceTree = "<group>";
+		};
+		DC9C64042A855D4B0098B2B0 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				DC9C64052A855D4B0098B2B0 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DC9C640E2A855D4B0098B2B0 /* Fito-SwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DC9C640F2A855D4B0098B2B0 /* Fito_SwiftUITests.swift */,
+			);
+			path = "Fito-SwiftUITests";
+			sourceTree = "<group>";
+		};
+		DC9C64182A855D4C0098B2B0 /* Fito-SwiftUIUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DC9C64192A855D4C0098B2B0 /* Fito_SwiftUIUITests.swift */,
+				DC9C641B2A855D4C0098B2B0 /* Fito_SwiftUIUITestsLaunchTests.swift */,
+			);
+			path = "Fito-SwiftUIUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DC9C63FA2A855D4B0098B2B0 /* Fito-SwiftUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC9C641F2A855D4C0098B2B0 /* Build configuration list for PBXNativeTarget "Fito-SwiftUI" */;
+			buildPhases = (
+				DC9C63F72A855D4B0098B2B0 /* Sources */,
+				DC9C63F82A855D4B0098B2B0 /* Frameworks */,
+				DC9C63F92A855D4B0098B2B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Fito-SwiftUI";
+			productName = "Fito-SwiftUI";
+			productReference = DC9C63FB2A855D4B0098B2B0 /* Fito-SwiftUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DC9C640A2A855D4B0098B2B0 /* Fito-SwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC9C64222A855D4C0098B2B0 /* Build configuration list for PBXNativeTarget "Fito-SwiftUITests" */;
+			buildPhases = (
+				DC9C64072A855D4B0098B2B0 /* Sources */,
+				DC9C64082A855D4B0098B2B0 /* Frameworks */,
+				DC9C64092A855D4B0098B2B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC9C640D2A855D4B0098B2B0 /* PBXTargetDependency */,
+			);
+			name = "Fito-SwiftUITests";
+			productName = "Fito-SwiftUITests";
+			productReference = DC9C640B2A855D4B0098B2B0 /* Fito-SwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DC9C64142A855D4C0098B2B0 /* Fito-SwiftUIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DC9C64252A855D4C0098B2B0 /* Build configuration list for PBXNativeTarget "Fito-SwiftUIUITests" */;
+			buildPhases = (
+				DC9C64112A855D4C0098B2B0 /* Sources */,
+				DC9C64122A855D4C0098B2B0 /* Frameworks */,
+				DC9C64132A855D4C0098B2B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC9C64172A855D4C0098B2B0 /* PBXTargetDependency */,
+			);
+			name = "Fito-SwiftUIUITests";
+			productName = "Fito-SwiftUIUITests";
+			productReference = DC9C64152A855D4C0098B2B0 /* Fito-SwiftUIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DC9C63F32A855D4A0098B2B0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					DC9C63FA2A855D4B0098B2B0 = {
+						CreatedOnToolsVersion = 14.3.1;
+					};
+					DC9C640A2A855D4B0098B2B0 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = DC9C63FA2A855D4B0098B2B0;
+					};
+					DC9C64142A855D4C0098B2B0 = {
+						CreatedOnToolsVersion = 14.3.1;
+						TestTargetID = DC9C63FA2A855D4B0098B2B0;
+					};
+				};
+			};
+			buildConfigurationList = DC9C63F62A855D4A0098B2B0 /* Build configuration list for PBXProject "Fito-SwiftUI" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DC9C63F22A855D4A0098B2B0;
+			productRefGroup = DC9C63FC2A855D4B0098B2B0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DC9C63FA2A855D4B0098B2B0 /* Fito-SwiftUI */,
+				DC9C640A2A855D4B0098B2B0 /* Fito-SwiftUITests */,
+				DC9C64142A855D4C0098B2B0 /* Fito-SwiftUIUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DC9C63F92A855D4B0098B2B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC9C64062A855D4B0098B2B0 /* Preview Assets.xcassets in Resources */,
+				DC9C64032A855D4B0098B2B0 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC9C64092A855D4B0098B2B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC9C64132A855D4C0098B2B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DC9C63F72A855D4B0098B2B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC9C64012A855D4B0098B2B0 /* ContentView.swift in Sources */,
+				DC9C63FF2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC9C64072A855D4B0098B2B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC9C64102A855D4B0098B2B0 /* Fito_SwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DC9C64112A855D4C0098B2B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DC9C641C2A855D4C0098B2B0 /* Fito_SwiftUIUITestsLaunchTests.swift in Sources */,
+				DC9C641A2A855D4C0098B2B0 /* Fito_SwiftUIUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC9C640D2A855D4B0098B2B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC9C63FA2A855D4B0098B2B0 /* Fito-SwiftUI */;
+			targetProxy = DC9C640C2A855D4B0098B2B0 /* PBXContainerItemProxy */;
+		};
+		DC9C64172A855D4C0098B2B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DC9C63FA2A855D4B0098B2B0 /* Fito-SwiftUI */;
+			targetProxy = DC9C64162A855D4C0098B2B0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		DC9C641D2A855D4C0098B2B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DC9C641E2A855D4C0098B2B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DC9C64202A855D4C0098B2B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Fito-SwiftUI/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jh.Fito-SwiftUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC9C64212A855D4C0098B2B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Fito-SwiftUI/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jh.Fito-SwiftUI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DC9C64232A855D4C0098B2B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jh.Fito-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fito-SwiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fito-SwiftUI";
+			};
+			name = Debug;
+		};
+		DC9C64242A855D4C0098B2B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jh.Fito-SwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Fito-SwiftUI.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Fito-SwiftUI";
+			};
+			name = Release;
+		};
+		DC9C64262A855D4C0098B2B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jh.Fito-SwiftUIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Fito-SwiftUI";
+			};
+			name = Debug;
+		};
+		DC9C64272A855D4C0098B2B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "jh.Fito-SwiftUIUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Fito-SwiftUI";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DC9C63F62A855D4A0098B2B0 /* Build configuration list for PBXProject "Fito-SwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC9C641D2A855D4C0098B2B0 /* Debug */,
+				DC9C641E2A855D4C0098B2B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC9C641F2A855D4C0098B2B0 /* Build configuration list for PBXNativeTarget "Fito-SwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC9C64202A855D4C0098B2B0 /* Debug */,
+				DC9C64212A855D4C0098B2B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC9C64222A855D4C0098B2B0 /* Build configuration list for PBXNativeTarget "Fito-SwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC9C64232A855D4C0098B2B0 /* Debug */,
+				DC9C64242A855D4C0098B2B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DC9C64252A855D4C0098B2B0 /* Build configuration list for PBXNativeTarget "Fito-SwiftUIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DC9C64262A855D4C0098B2B0 /* Debug */,
+				DC9C64272A855D4C0098B2B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DC9C63F32A855D4A0098B2B0 /* Project object */;
+}
