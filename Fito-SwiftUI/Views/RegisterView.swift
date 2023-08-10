@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RegisterView: View {
+    var actionPerformed:((ProjectAction) -> Void)?
     @State var email = "";
     @State var password = "";
     var body: some View {
@@ -42,7 +43,10 @@ struct RegisterView: View {
                 
                 HStack{
                     Text("Already have an account ?")
-                    Text("Login").foregroundColor(Color.blue)
+                    Text("Login").foregroundColor(Color.blue).onTapGesture {
+                        
+                        actionPerformed?(.login)
+                    }
                     
                 }.padding(.vertical,20)
                 Button(action: {
@@ -63,8 +67,3 @@ struct RegisterView: View {
     }
 }
 
-struct RegisterView_Previews: PreviewProvider {
-    static var previews: some View {
-        RegisterView()
-    }
-}

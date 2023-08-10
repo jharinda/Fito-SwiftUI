@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    var actionPerformed:((ProjectAction) -> Void)?
     @State var email = "";
     @State var password = "";
     var body: some View {
@@ -26,7 +27,10 @@ struct LoginView: View {
                 
                 HStack{
                     Text("Don't have an account ?")
-                    Text("Register").foregroundColor(Color.blue)
+                    Text("Register").foregroundColor(Color.blue).onTapGesture {
+                        print("on tap register")
+                        actionPerformed?(.register)
+                    }
                     
                 }.padding(.vertical,20)
                 Button(action: {
@@ -57,11 +61,5 @@ struct OvalTextFieldStyle: TextFieldStyle {
             .cornerRadius(15)
             .shadow(color: Color.black.opacity(0.1),radius: 10,x: 4,y:5)
             
-    }
-}
-
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginView()
     }
 }

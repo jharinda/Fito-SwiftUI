@@ -6,8 +6,15 @@
 //
 
 import SwiftUI
+enum ProjectAction{
+    case login
+    case getStarted
+    case register
+    case dashboard
+}
 
 struct GetStartedView: View {
+    var actionPerformed:((ProjectAction) -> Void); //?
     var body: some View {
         ZStack{     Color.yellow.ignoresSafeArea()
             VStack{
@@ -15,7 +22,9 @@ struct GetStartedView: View {
                 Text("Fito")
                     .font(.custom("Poppins-BoldItalic", size: 40))
                 Spacer()
-                Button(action: {}) {
+                Button(action: {
+                    actionPerformed(.login)
+                }) {
                    
                     Text("Get Stareted").font(.custom("Poppins-SemiBold", size: 15)).padding(.horizontal)
                 }
@@ -32,8 +41,3 @@ struct GetStartedView: View {
     }
 }
 
-struct GetStartedView_Previews: PreviewProvider {
-    static var previews: some View {
-        GetStartedView()
-    }
-}
