@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0750C99D2A8614C70087AF8B /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0750C99C2A8614C70087AF8B /* ProfileView.swift */; };
 		DC9C63FF2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C63FE2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift */; };
 		DC9C64012A855D4B0098B2B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C64002A855D4B0098B2B0 /* ContentView.swift */; };
 		DC9C64032A855D4B0098B2B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC9C64022A855D4B0098B2B0 /* Assets.xcassets */; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0750C99C2A8614C70087AF8B /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		DC9C63FB2A855D4B0098B2B0 /* Fito-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fito-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9C63FE2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fito_SwiftUIApp.swift; sourceTree = "<group>"; };
 		DC9C64002A855D4B0098B2B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0750C9992A8612930087AF8B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0750C99C2A8614C70087AF8B /* ProfileView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		DC9C63F22A855D4A0098B2B0 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +104,7 @@
 		DC9C63FD2A855D4B0098B2B0 /* Fito-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				0750C9992A8612930087AF8B /* Views */,
 				DC9C63FE2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift */,
 				DC9C64002A855D4B0098B2B0 /* ContentView.swift */,
 				DC9C64022A855D4B0098B2B0 /* Assets.xcassets */,
@@ -258,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC9C64012A855D4B0098B2B0 /* ContentView.swift in Sources */,
+				0750C99D2A8614C70087AF8B /* ProfileView.swift in Sources */,
 				DC9C63FF2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
