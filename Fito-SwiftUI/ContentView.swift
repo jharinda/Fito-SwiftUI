@@ -26,14 +26,6 @@ struct ContentView: View {
     func actionPerformed(action:ProjectAction){
         print("action performed",action)
         selectedPage = action
-        /*switch action{
-        case .login:
-            print("login page")
-            self.selectedPage = .login
-        
-        default:
-            print("action invalid")
-        }*/
     }
 }
 
