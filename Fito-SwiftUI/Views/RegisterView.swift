@@ -43,11 +43,13 @@ struct RegisterView: View {
                 
                 HStack{
                     Text("Already have an account ?")
-                    Text("Login").foregroundColor(Color.blue).onTapGesture {
-                        
-                        actionPerformed?(.login)
-                    }
-                    
+                    NavigationLink(destination: LoginView().navigationBarHidden(true)
+                        .navigationBarBackButtonHidden(true), label: {
+                            Text("Login").foregroundColor(Color.blue).onTapGesture {
+                                
+                                actionPerformed?(.login)
+                            }
+                        })
                 }.padding(.vertical,20)
                 Button(action: {
                     print("Login clicked")

@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     @State var selectedPage: ProjectAction = .getStarted
     var body: some View {
-        switch selectedPage{
+        /*switch selectedPage{
         case .getStarted:
             GetStartedView(actionPerformed: actionPerformed)
         case .login:
@@ -19,6 +19,13 @@ struct ContentView: View {
             RegisterView(actionPerformed: actionPerformed)
         case .dashboard:
             RegisterView()
+        }*/
+        ZStack{
+            NavigationStack{
+                GetStartedView(actionPerformed: actionPerformed).navigationBarHidden(true)
+                    .navigationBarBackButtonHidden(true)
+            }.navigationBarHidden(true)
+                .navigationBarBackButtonHidden(true)
         }
        
     }
