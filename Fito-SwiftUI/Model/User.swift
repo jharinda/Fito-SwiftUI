@@ -14,6 +14,7 @@ struct User{
     var email:String
     var age:Int
     var heightInCm:Float
+    var gender:String
     var records:[Record]?
 }
 
