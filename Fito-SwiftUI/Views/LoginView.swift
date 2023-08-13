@@ -31,7 +31,7 @@ struct LoginView: View {
                     .padding(.horizontal,40)
                 
                 HStack{
-                    Text("Don't have an account ?")
+                    Text("Don't have an account ? ")
                     NavigationLink(destination: RegisterView().navigationBarHidden(true)
                         .navigationBarBackButtonHidden(true), label: {
                             Text("Register").foregroundColor(Color.blue).onTapGesture {
