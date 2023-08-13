@@ -19,25 +19,23 @@ struct GetStartedView: View {
         ZStack{     Color.yellow.ignoresSafeArea()
             VStack{
                 Spacer()
+                
                 Text("Fito")
                     .font(.custom("Poppins-BoldItalic", size: 40))
                 Spacer()
-                Button(action: {
-                    actionPerformed(.login)
-                }) {
-                   
-                    Text("Get Stareted").font(.custom("Poppins-SemiBold", size: 15)).padding(.horizontal)
-                }
-                .padding()
-                .foregroundColor(.white)
-                .background(Color.black)
-                .cornerRadius(57)
-                .offset(y:-50)
-                
+                NavigationLink(destination: RegisterView().navigationBarHidden(true)
+                    .navigationBarBackButtonHidden(true), label: {
+                        Text("Get Started").font(.custom("Poppins-SemiBold", size: 15))
+                            .padding(.horizontal)
+                            .frame(width: 200,height:50)
+                            .background(.black)
+                            .foregroundColor(.white)
+                            .cornerRadius(60)
+                    })
             }
             
         }
-       
+        
     }
 }
 

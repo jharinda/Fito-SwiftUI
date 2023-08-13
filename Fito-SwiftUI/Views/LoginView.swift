@@ -27,15 +27,18 @@ struct LoginView: View {
                 
                 HStack{
                     Text("Don't have an account ?")
-                    Text("Register").foregroundColor(Color.blue).onTapGesture {
-                        print("on tap register")
-                        actionPerformed?(.register)
-                    }
+                    NavigationLink(destination: RegisterView().navigationBarHidden(true)
+                        .navigationBarBackButtonHidden(true), label: {
+                            Text("Register").foregroundColor(Color.blue).onTapGesture {
+                                
+                                actionPerformed?(.login)
+                            }
+                        })
                     
                 }.padding(.vertical,20)
                 Button(action: {
                     print("Login clicked")
-                   /* fetchData()*/
+                   login()
                 }) {
                    
                     Text("Login").font(.custom("Poppins-SemiBold", size: 15)).padding(.horizontal,70)
@@ -48,6 +51,11 @@ struct LoginView: View {
                 
             }
         }
+    }
+    
+    func login(){
+        var user = User(id: 0, name: "", password: password, email: email, age: 0, heightInCm: 0)
+        
     }
     
 }

@@ -8,13 +8,13 @@
 import Foundation
 
 struct User{
-    var id:any Identifiable
+    var id:Int
     var name:String
     var password:String
     var email:String
     var age:Int
     var heightInCm:Float
-    var records:[Record]
+    var records:[Record]?
 }
 
 struct Record{
