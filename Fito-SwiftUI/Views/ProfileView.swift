@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ProfileView: View {
     
+    @State private var orientation = UIDeviceOrientation.unknown
+    
     private var data : [String] = ["70", "170", "20", "W"]
     private var metrics : [String] = ["Kg","cm","Age","Weight"]
     
@@ -21,41 +23,41 @@ struct ProfileView: View {
      
     
     let columns = [
-        GridItem(.adaptive(minimum: 110))
+        GridItem(.adaptive(minimum: 120))
     ]
 
     var body: some View {
         VStack{
-            HStack{
-                Text("Dashboard")
-                    .font(.custom("Poppins-BoldItalic", size: 40))
-                    .padding()
-                Image("logout")
-            }
-            HStack{
-                Spacer()
-                
-                Image("profile")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .frame(width: 127,height: 127)
-                    .clipShape(Circle())
-                    .clipped()
-                    .padding()
-                Spacer()
-            }
-            HStack{
-                Text("David Costa")
-                    .font(.custom("Poppins", size: 30))
-                Image("male")
-                    
-            }
-            Text("Overweight")
-                .font(.custom("Poppins", size: 15))
-                .foregroundColor(.red)
-                .padding(5)
-            Spacer()
             ScrollView{
+                HStack{
+                    Text("Dashboard")
+                        .font(.custom("Poppins-BoldItalic", size: 40))
+                        .padding()
+                    Image("logout")
+                }
+                HStack{
+                    Spacer()
+                    
+                    Image("profile")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 127,height: 127)
+                        .clipShape(Circle())
+                        .clipped()
+                        .padding()
+                    Spacer()
+                }
+                HStack{
+                    Text("David Costa")
+                        .font(.custom("Poppins", size: 30))
+                    Image("male")
+                    
+                }
+                Text("Overweight")
+                    .font(.custom("Poppins", size: 15))
+                    .foregroundColor(.red)
+                    .padding(5)
+                Spacer()
                 LazyVGrid(columns: columns, spacing:20){
                     ForEach(data,id:\.self){item in
                         ZStack{
@@ -76,15 +78,17 @@ struct ProfileView: View {
                             }
                         }
                     }
+                    
                 }
+                .padding(.top,10)
+                .padding(.trailing,70)
+                .padding(.leading,70)
             }
-            .padding(.top,10)
-            .padding(.trailing,70)
-            .padding(.leading,70)
-        }.background(alignment: .topLeading) {
-            Image("background")
-                .edgesIgnoringSafeArea(.all)
-    }
+            .background(alignment: .topLeading) {
+                Image("background")
+                    .edgesIgnoringSafeArea(.all)
+            }
+        }
     }
 }
 
@@ -93,3 +97,5 @@ struct ProfileView_Previews: PreviewProvider {
         ProfileView()
     }
 }
+
+
