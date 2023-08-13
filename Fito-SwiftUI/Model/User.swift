@@ -7,10 +7,10 @@
 
 import Foundation
 
-struct User{
+struct User:Decodable{
     var id:Int
     var name:String
-    var password:String
+    var password:String?
     var email:String
     var age:Int
     var heightInCm:Float
@@ -18,30 +18,30 @@ struct User{
     var records:[Record]?
 }
 
-struct Record{
+struct Record:Decodable{
     var id:Int
     var userId:Int
-    var date:Date
+    var date:String
     var weight:Float
     var recordWiseMeals:[RecordWiseMeal]
-    var recordWiseWorkout:[RecordWiseWorkout]
+    var recordWiseWorkouts:[RecordWiseWorkout]
 }
 
-struct RecordWiseMeal{
-    var id:any Identifiable
+struct RecordWiseMeal:Decodable{
+    var id:Int
     var recordId:Int
     var mealId:Int
     var mealQuantity:Int
 }
 
-struct RecordWiseWorkout{
-    var id:any Identifiable
+struct RecordWiseWorkout:Decodable{
+    var id:Int
     var recordId:Int
     var workoutId:Int
     var reps:Int
 }
 
-struct Meal{
+struct Meal:Decodable{
     var id:Int
     var name:String
     var kalCount:Int
