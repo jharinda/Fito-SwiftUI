@@ -38,7 +38,7 @@ struct LoginView: View {
                 }.padding(.vertical,20)
                 Button(action: {
                     print("Login clicked")
-                   /* fetchData()*/
+                   login()
                 }) {
                    
                     Text("Login").font(.custom("Poppins-SemiBold", size: 15)).padding(.horizontal,70)
@@ -51,6 +51,11 @@ struct LoginView: View {
                 
             }
         }
+    }
+    
+    func login(){
+        var user = User(id: 0, name: "", password: password, email: email, age: 0, heightInCm: 0)
+        
     }
     
 }

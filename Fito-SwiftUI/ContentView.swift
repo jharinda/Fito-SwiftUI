@@ -10,16 +10,6 @@ import SwiftUI
 struct ContentView: View {
     @State var selectedPage: ProjectAction = .getStarted
     var body: some View {
-        /*switch selectedPage{
-        case .getStarted:
-            GetStartedView(actionPerformed: actionPerformed)
-        case .login:
-            LoginView(actionPerformed: actionPerformed)
-        case .register:
-            RegisterView(actionPerformed: actionPerformed)
-        case .dashboard:
-            RegisterView()
-        }*/
         ZStack{
             NavigationStack{
                 GetStartedView(actionPerformed: actionPerformed).navigationBarHidden(true)
@@ -35,8 +25,6 @@ struct ContentView: View {
         selectedPage = action
     }
 }
-
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

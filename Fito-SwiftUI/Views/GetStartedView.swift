@@ -19,6 +19,7 @@ struct GetStartedView: View {
         ZStack{     Color.yellow.ignoresSafeArea()
             VStack{
                 Spacer()
+                
                 Text("Fito")
                     .font(.custom("Poppins-BoldItalic", size: 40))
                 Spacer()

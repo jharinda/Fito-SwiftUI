@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC1AB0DE2A879F690038E3AE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AB0DD2A879F690038E3AE /* NetworkManager.swift */; };
+		DC1AB0E02A87A1A90038E3AE /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AB0DF2A87A1A90038E3AE /* Repository.swift */; };
 		DC9C63FF2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C63FE2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift */; };
 		DC9C64012A855D4B0098B2B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C64002A855D4B0098B2B0 /* ContentView.swift */; };
 		DC9C64032A855D4B0098B2B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC9C64022A855D4B0098B2B0 /* Assets.xcassets */; };
@@ -56,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DC1AB0DD2A879F690038E3AE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		DC1AB0DF2A87A1A90038E3AE /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		DC9C63FB2A855D4B0098B2B0 /* Fito-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fito-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC9C63FE2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fito_SwiftUIApp.swift; sourceTree = "<group>"; };
 		DC9C64002A855D4B0098B2B0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -215,6 +219,8 @@
 			isa = PBXGroup;
 			children = (
 				DC9C645A2A8570A70098B2B0 /* User.swift */,
+				DC1AB0DD2A879F690038E3AE /* NetworkManager.swift */,
+				DC1AB0DF2A87A1A90038E3AE /* Repository.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -370,6 +376,8 @@
 				DC9C64012A855D4B0098B2B0 /* ContentView.swift in Sources */,
 				DC9C64562A8569660098B2B0 /* RegisterView.swift in Sources */,
 				DC9C645B2A8570A70098B2B0 /* User.swift in Sources */,
+				DC1AB0E02A87A1A90038E3AE /* Repository.swift in Sources */,
+				DC1AB0DE2A879F690038E3AE /* NetworkManager.swift in Sources */,
 				DC9C642A2A8560200098B2B0 /* GetStartedView.swift in Sources */,
 				DC9C64582A856F110098B2B0 /* LoginView.swift in Sources */,
 				DC9C63FF2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift in Sources */,
