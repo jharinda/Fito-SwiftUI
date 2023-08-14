@@ -13,12 +13,15 @@ struct LoginView: View {
     @State var email = "";
     @State var password = "";
     @State var errorMessage = ""
+    @State var isLoading = false
     
     @State var isLoggedIn = false
     var body: some View {
         ZStack{
             Color.yellow.ignoresSafeArea()
+           
             VStack{
+               
                 Text("Login").font(.custom("Poppins-BoldItalic", size: 30)).offset(y:-40)
                 
                 TextField("Email",text:$email).font(.custom("Poppins-SemiBold", size: 15)).textFieldStyle(OvalTextFieldStyle())
@@ -61,6 +64,10 @@ struct LoginView: View {
                         .background(.white).fontWeight(.bold).cornerRadius(60).offset(y:20)
                 }
                 
+                if isLoading {
+                    SpinnerView().offset(y:20)
+                }
+                
             }
         }
     }
@@ -94,6 +101,8 @@ struct LoginView: View {
             return false
         }
         
+        isLoading = true
+        
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 status = "Network error: \(error)"
@@ -110,6 +119,7 @@ struct LoginView: View {
                     actionPerformed?(.login)
                     print(user)
                     print("user found")
+                    isLoading = false
                 } catch {
                     status = "Decoding error: \(error)"
                     errorMessage = "Invalid Email or Password"

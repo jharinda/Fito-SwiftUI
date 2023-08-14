@@ -42,6 +42,9 @@
 		DCC5795A2A8AA9BB00F4AC17 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC579592A8AA9BB00F4AC17 /* TabBarView.swift */; };
 		DCC5795B2A8AA9BB00F4AC17 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC579592A8AA9BB00F4AC17 /* TabBarView.swift */; };
 		DCC5795C2A8AA9BB00F4AC17 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC579592A8AA9BB00F4AC17 /* TabBarView.swift */; };
+		DCC5795F2A8AC4AD00F4AC17 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5795E2A8AC4AD00F4AC17 /* SpinnerView.swift */; };
+		DCC579602A8AC4AD00F4AC17 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5795E2A8AC4AD00F4AC17 /* SpinnerView.swift */; };
+		DCC579612A8AC4AD00F4AC17 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5795E2A8AC4AD00F4AC17 /* SpinnerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,6 +102,7 @@
 		DC9C64572A856F110098B2B0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DC9C645A2A8570A70098B2B0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DCC579592A8AA9BB00F4AC17 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		DCC5795E2A8AC4AD00F4AC17 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,7 @@
 		DC9C63FD2A855D4B0098B2B0 /* Fito-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				DCC5795D2A8AC49300F4AC17 /* Components */,
 				DC9C64592A8570790098B2B0 /* Model */,
 				DC9C642E2A8562210098B2B0 /* Info.plist */,
 				DC9C642B2A8560730098B2B0 /* Fonts */,
@@ -231,6 +236,14 @@
 				DC1AB0DF2A87A1A90038E3AE /* Repository.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		DCC5795D2A8AC49300F4AC17 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DCC5795E2A8AC4AD00F4AC17 /* SpinnerView.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,6 +403,7 @@
 				DC9C642A2A8560200098B2B0 /* GetStartedView.swift in Sources */,
 				DC9C64582A856F110098B2B0 /* LoginView.swift in Sources */,
 				DCC5795A2A8AA9BB00F4AC17 /* TabBarView.swift in Sources */,
+				DCC5795F2A8AC4AD00F4AC17 /* SpinnerView.swift in Sources */,
 				DC9C63FF2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -399,6 +413,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCC5795B2A8AA9BB00F4AC17 /* TabBarView.swift in Sources */,
+				DCC579602A8AC4AD00F4AC17 /* SpinnerView.swift in Sources */,
 				DC9C64102A855D4B0098B2B0 /* Fito_SwiftUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +424,7 @@
 			files = (
 				DC9C641C2A855D4C0098B2B0 /* Fito_SwiftUIUITestsLaunchTests.swift in Sources */,
 				DCC5795C2A8AA9BB00F4AC17 /* TabBarView.swift in Sources */,
+				DCC579612A8AC4AD00F4AC17 /* SpinnerView.swift in Sources */,
 				DC9C641A2A855D4C0098B2B0 /* Fito_SwiftUIUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

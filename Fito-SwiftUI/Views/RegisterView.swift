@@ -10,6 +10,7 @@ import SwiftUI
 struct RegisterView: View {
     var actionPerformed:((ProjectAction) -> Void)?
     @AppStorage("currentUserEmail") var currentUserEmail = ""
+    @State var isLoading = false
     @State var isLoggedIn = false
     @State var errorMessage = ""
     
@@ -100,6 +101,10 @@ struct RegisterView: View {
                         .fontWeight(.bold)
                         .cornerRadius(60)
                         .offset(y:10)
+                }else{
+                    if (isLoading) {
+                        SpinnerView().offset(y:20)
+                    }
                 }
             }
         }
@@ -215,6 +220,8 @@ struct RegisterView: View {
             return false
         }
         
+        isLoading = true
+        
         URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 status = "Network error: \(error)"
@@ -228,7 +235,7 @@ struct RegisterView: View {
                     currentUserId = user.id
                     currentUserEmail = user.email
                     isLoggedIn = true
-                    
+                    isLoading = false
                     print(user)
                     print("user found")
                 } catch {
