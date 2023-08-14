@@ -11,9 +11,20 @@ struct ProfileView: View {
     
     @State private var orientation = UIDeviceOrientation.unknown
     
-    @State private var currentUser = User(id: 0, name: "Roshel Rao", password: "123", email: "r@r.c", age: 23, heightInCm:170.0, gender:"F")
+    //@State private var currentUser = User(id: 0, name: "Roshel Rao", password: "123", email: "r@r.c", age: 23, heightInCm:170.0, gender:"F")
+    @State private var user: User?
+    @State private var meal: Meal?
     
-    private var data : [String] = ["70", "170", "20", "W"]
+    @State private var meals: [Meal] = []
+    @State private var workouts: [Workout] = []
+    
+    //@AppStorage("currentUserId") var currentUserId = "jharinda@gmail.com"
+    @AppStorage("currentUserEmail") var currentUserEmail = ""
+    //currentUserEmail = "jharinda@gmail.com"
+    
+
+    
+    //private var data : [String] = ["70", "170", "20", "W"]
     private var metrics : [String] = ["Kg","cm","Age","Weight"]
     
      private let colors: [Color] = [
@@ -22,7 +33,6 @@ struct ProfileView: View {
      Color(red: 222/255, green: 255/255, blue: 226/255),
      Color(red: 206/255, green: 230/255, blue: 253/255)
      ]
-     
     
     let columns = [
         GridItem(.adaptive(minimum: 120))
@@ -50,33 +60,91 @@ struct ProfileView: View {
                     Spacer()
                 }
                 HStack{
-                    Text(currentUser.name)
-                        .font(.custom("Poppins", size: 30))
-                    Image("male")
+                    if let user = user {
+                        Text(user.name)
+                            .font(.custom("Poppins", size: 30))
+                        if(user.gender=="Male"){
+                            Image("male")
+                        }else{
+                            Image("female")
+                        }
+                    }
                     
                 }
-                Text("Overweight")
-                    .font(.custom("Poppins", size: 15))
-                    .foregroundColor(.red)
-                    .padding(5)
+                if let user = user {
+                    if(!user.records!.isEmpty){
+                        var recordCount = user.records!.count - 1
+                        var weight = user.records?[recordCount].weight
+                        let bmiStatus = calBMIStatus(height:user.heightInCm,weight:weight!)
+                        if(bmiStatus == "Overweight"){
+                            Text("Overweight")
+                                .font(.custom("Poppins", size: 15))
+                                .foregroundColor(.red)
+                        }else if(bmiStatus == "Underweight"){
+                            Text("Underweight")
+                                .font(.custom("Poppins", size: 15))
+                                .foregroundColor(.red)
+                        }else if(bmiStatus == "Healthy"){
+                            Text("Healthy")
+                                .font(.custom("Poppins", size: 15))
+                                .foregroundColor(.green)
+                        }
+                    }else{
+                        Text("BMI Status not available")
+                            .font(.custom("Poppins", size: 15))
+                            .foregroundColor(.orange)
+                    }
+                }
                 Spacer()
                 LazyVGrid(columns: columns, spacing:20){
-                    ForEach(data,id:\.self){item in
-                        ZStack{
-                            Rectangle()
-                                .frame(width:110,height: 110)
-                                .foregroundColor(colors[data.firstIndex(of: item) ?? 0])
-                                .cornerRadius(14)
-                                .shadow(
-                                    color: Color.black.opacity(0.15),
-                                    radius: 4,
-                                    x: 4,
-                                    y: 5
-                                )
-                            VStack{
-                                Text("\(item)")
-                                    .font(.custom("Poppins", size: 20))
-                                Text("\(metrics[data.firstIndex(of: item) ?? 0])")
+                    if let user = user {
+                        if(!user.records!.isEmpty){
+                            var recordCount = user.records!.count - 1
+                            var weight = user.records?[recordCount].weight
+                            let weightStatus = predictWeightStatus(records: user.records!)
+                        
+                            var data : [String] = ["\(weight!)", "\(user.heightInCm)", "\(user.age)", "\(weightStatus)"]
+                            
+                            ForEach(data,id:\.self){item in
+                                ZStack{
+                                    Rectangle()
+                                        .frame(width:110,height: 110)
+                                        .foregroundColor(colors[data.firstIndex(of: item) ?? 0])
+                                        .cornerRadius(14)
+                                        .shadow(
+                                            color: Color.black.opacity(0.15),
+                                            radius: 4,
+                                            x: 4,
+                                            y: 5
+                                        )
+                                    VStack{
+                                        Text("\(item)")
+                                            .font(.custom("Poppins", size: 20))
+                                        Text("\(metrics[data.firstIndex(of: item) ?? 0])")
+                                    }
+                                }
+                            }
+                        }else{
+                            var data : [String] = ["-", "\(user.heightInCm)", "\(user.age)", "."]
+                            
+                            ForEach(data,id:\.self){item in
+                                ZStack{
+                                    Rectangle()
+                                        .frame(width:110,height: 110)
+                                        .foregroundColor(colors[data.firstIndex(of: item) ?? 0])
+                                        .cornerRadius(14)
+                                        .shadow(
+                                            color: Color.black.opacity(0.15),
+                                            radius: 4,
+                                            x: 4,
+                                            y: 5
+                                        )
+                                    VStack{
+                                        Text("\(item)")
+                                            .font(.custom("Poppins", size: 20))
+                                        Text("\(metrics[data.firstIndex(of: item) ?? 0])")
+                                    }
+                                }
                             }
                         }
                     }
@@ -89,13 +157,111 @@ struct ProfileView: View {
             .background(alignment: .topLeading) {
                 Image("background")
                     .edgesIgnoringSafeArea(.all)
+                    .onAppear{currentUserEmail = "jharinda@gmail.com"}
             }
+        }.task {
+            await getCurrentUserDetails()
+            await getMeals()
+            await getWorkouts()
         }
     }
+    
+    func getCurrentUserDetails() async{
+        guard let url = URL(string: USER_API_URL + "/" + currentUserEmail) else { fatalError("Missing URL") }
+        
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let decodedUsers = try JSONDecoder().decode(User.self, from: data)
+            DispatchQueue.main.async {
+                user = decodedUsers
+            }
+        }catch{
+            print(error)
+        }
+    }
+    
+    func calBMIStatus(height: Float,weight:Float) -> String{
+        var BMIOverWeight : Float = 24.9;
+        var BMIUnderWeight : Float = 18.5;
+        
+        var heightInM = height / 100;
+        var bmi = weight / (heightInM * heightInM);
+        
+        if (bmi >= BMIOverWeight)
+        {
+            return "Overweight"
+        }
+        else if (bmi <= BMIUnderWeight)
+        {
+            return "Underweight"
+        }
+        else
+        {
+            return "Healthy"
+        }
+    }
+    
+    func getMeals() async{
+        guard let url = URL(string: "https://fitomealsapi.azurewebsites.net/api/Meals") else { fatalError("Missing URL") }
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let decodedMeals = try JSONDecoder().decode([Meal].self, from: data)
+            DispatchQueue.main.async {
+                meals = decodedMeals
+            }
+        }catch{
+            print(error)
+        }
+    }
+    
+    func getWorkouts() async{
+        guard let url = URL(string: "https://fitoworkoutsapi1.azurewebsites.net/api/Workouts") else { fatalError("Missing URL") }
+        do {
+            let (data, _) = try await URLSession.shared.data(from: url)
+            let decodedWorkouts = try JSONDecoder().decode([Workout].self, from: data)
+            DispatchQueue.main.async {
+                workouts = decodedWorkouts
+                print(workouts)
+            }
+        }catch{
+            print(error)
+        }
+    }
+    
+    func predictWeightStatus(records:[Record]) -> String{
+        var caloriesBurned = 0
+        var calorieIntake = 0
+        for record in records {
+            for workoutRecord in record.recordWiseWorkouts{
+                if let workout = workouts.first(where: { $0.id == workoutRecord.workoutId }) {
+                            caloriesBurned = workout.kalCount * workoutRecord.reps
+                        }
+            }
+            for mealRecord in record.recordWiseMeals{
+                if let meal = meals.first(where: { $0.id == mealRecord.mealId }) {
+                            calorieIntake = meal.kalCount * mealRecord.mealQuantity
+                        }
+                }
+            }
+        
+        if(calorieIntake > caloriesBurned){
+            return "G"
+        }
+        else{
+            return "L"
+        }
+        
+        }
+    
+        
 }
+    
+
 
 struct ProfileView_Previews: PreviewProvider {
     static var previews: some View {
         ProfileView()
     }
 }
+
+    
