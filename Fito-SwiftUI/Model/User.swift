@@ -46,3 +46,10 @@ struct Meal:Decodable,Encodable{
     var name:String
     var kalCount:Int
 }
+
+struct Workout:Decodable,Encodable{
+    var id:Int
+    var name:String
+    var kalCount:Int
+}
+
