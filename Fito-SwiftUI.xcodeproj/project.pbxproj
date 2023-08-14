@@ -39,6 +39,9 @@
 		DC9C64562A8569660098B2B0 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C64552A8569660098B2B0 /* RegisterView.swift */; };
 		DC9C64582A856F110098B2B0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C64572A856F110098B2B0 /* LoginView.swift */; };
 		DC9C645B2A8570A70098B2B0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C645A2A8570A70098B2B0 /* User.swift */; };
+		DCC5795A2A8AA9BB00F4AC17 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC579592A8AA9BB00F4AC17 /* TabBarView.swift */; };
+		DCC5795B2A8AA9BB00F4AC17 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC579592A8AA9BB00F4AC17 /* TabBarView.swift */; };
+		DCC5795C2A8AA9BB00F4AC17 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC579592A8AA9BB00F4AC17 /* TabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +98,7 @@
 		DC9C64552A8569660098B2B0 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		DC9C64572A856F110098B2B0 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		DC9C645A2A8570A70098B2B0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DCC579592A8AA9BB00F4AC17 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +193,7 @@
 				DC9C64552A8569660098B2B0 /* RegisterView.swift */,
 				DC9C64572A856F110098B2B0 /* LoginView.swift */,
 				075E670F2A88BBFD00DD758D /* ProfileView.swift */,
+				DCC579592A8AA9BB00F4AC17 /* TabBarView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -384,6 +389,7 @@
 				DC1AB0DE2A879F690038E3AE /* NetworkManager.swift in Sources */,
 				DC9C642A2A8560200098B2B0 /* GetStartedView.swift in Sources */,
 				DC9C64582A856F110098B2B0 /* LoginView.swift in Sources */,
+				DCC5795A2A8AA9BB00F4AC17 /* TabBarView.swift in Sources */,
 				DC9C63FF2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,6 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCC5795B2A8AA9BB00F4AC17 /* TabBarView.swift in Sources */,
 				DC9C64102A855D4B0098B2B0 /* Fito_SwiftUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,6 +408,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC9C641C2A855D4C0098B2B0 /* Fito_SwiftUIUITestsLaunchTests.swift in Sources */,
+				DCC5795C2A8AA9BB00F4AC17 /* TabBarView.swift in Sources */,
 				DC9C641A2A855D4C0098B2B0 /* Fito_SwiftUIUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

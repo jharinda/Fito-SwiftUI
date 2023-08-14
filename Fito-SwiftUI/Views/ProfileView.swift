@@ -21,6 +21,7 @@ struct ProfileView: View {
     //@AppStorage("currentUserId") var currentUserId = "jharinda@gmail.com"
     @AppStorage("currentUserEmail") var currentUserEmail = ""
     //currentUserEmail = "jharinda@gmail.com"
+    @State var isLoggedOut = false
     
 
     
@@ -40,12 +41,16 @@ struct ProfileView: View {
 
     var body: some View {
         VStack{
+            NavigationLink(destination: LoginView().navigationBarBackButtonHidden(true), isActive: $isLoggedOut) { EmptyView() }
             ScrollView{
                 HStack{
                     Text("Dashboard")
                         .font(.custom("Poppins-BoldItalic", size: 40))
                         .padding()
-                    Image("logout")
+                    Image("logout").onTapGesture {
+                        currentUserEmail = ""
+                        isLoggedOut = true;
+                    }
                 }
                 HStack{
                     Spacer()
@@ -157,7 +162,10 @@ struct ProfileView: View {
             .background(alignment: .topLeading) {
                 Image("background")
                     .edgesIgnoringSafeArea(.all)
-                    .onAppear{currentUserEmail = "jharinda@gmail.com"}
+                    .onAppear{
+                        //currentUserEmail = "jharinda@gmail.com"
+                        
+                    }
             }
         }.task {
             await getCurrentUserDetails()

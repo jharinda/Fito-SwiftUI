@@ -32,12 +32,12 @@ struct LoginView: View {
                 
                 HStack{
                     Text("Don't have an account ? ")
-                    NavigationLink(destination: RegisterView().navigationBarHidden(true)
-                        .navigationBarBackButtonHidden(true), label: {
-                            Text("Register").foregroundColor(Color.blue).onTapGesture {
-                                
-                                actionPerformed?(.login)
-                            }
+                    NavigationLink(destination: RegisterView()
+                        .navigationBarHidden(true)
+                        .navigationBarBackButtonHidden(true),
+                                   label: {
+                            Text("Register")
+                            .foregroundColor(Color.blue)
                         })
                     
                 }.padding(.vertical,20)
@@ -54,7 +54,7 @@ struct LoginView: View {
                 .cornerRadius(57)
                 .offset(y:5)
                 
-                NavigationLink(destination: ProfileView().navigationBarBackButtonHidden(true), isActive: $isLoggedIn) { EmptyView() }
+                NavigationLink(destination: TabBarView().navigationBarBackButtonHidden(true), isActive: $isLoggedIn) { EmptyView() }
                 
                 if(errorMessage != ""){
                     Text(errorMessage).padding(10).foregroundColor(.red).padding(.horizontal,30)
@@ -107,7 +107,7 @@ struct LoginView: View {
                     currentUserId = user.id
                     currentUserEmail = user.email
                     isLoggedIn = true
-                    
+                    actionPerformed?(.login)
                     print(user)
                     print("user found")
                 } catch {

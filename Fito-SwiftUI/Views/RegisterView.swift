@@ -67,7 +67,7 @@ struct RegisterView: View {
                 
                 HStack{
                     Text("Already have an account ?")
-                    NavigationLink(destination: ProfileView().navigationBarBackButtonHidden(true), isActive: $isLoggedIn) { EmptyView() }
+                    NavigationLink(destination: TabBarView().navigationBarBackButtonHidden(true), isActive: $isLoggedIn) { EmptyView() }
                     
                     NavigationLink(destination: LoginView().navigationBarHidden(true)
                         .navigationBarBackButtonHidden(true), label: {
