@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct User:Decodable{
+struct User:Decodable, Encodable{
     var id:Int
     var name:String
     var password:String?
@@ -18,7 +18,7 @@ struct User:Decodable{
     var records:[Record]?
 }
 
-struct Record:Decodable{
+struct Record:Decodable,Encodable{
     var id:Int
     var userId:Int
     var date:String
@@ -27,21 +27,21 @@ struct Record:Decodable{
     var recordWiseWorkouts:[RecordWiseWorkout]
 }
 
-struct RecordWiseMeal:Decodable{
+struct RecordWiseMeal:Decodable,Encodable{
     var id:Int
     var recordId:Int
     var mealId:Int
     var mealQuantity:Int
 }
 
-struct RecordWiseWorkout:Decodable{
+struct RecordWiseWorkout:Decodable,Encodable{
     var id:Int
     var recordId:Int
     var workoutId:Int
     var reps:Int
 }
 
-struct Meal:Decodable{
+struct Meal:Decodable,Encodable{
     var id:Int
     var name:String
     var kalCount:Int
