@@ -12,9 +12,9 @@ struct SpinnerView: View {
         ProgressView()
             .progressViewStyle(CircularProgressViewStyle())
             .scaleEffect(2.0) // Adjust the scale as needed
-            .padding()
-            .background(Color.black.opacity(0.5))
-            .cornerRadius(10)
+            .padding(25)
+            .background(Color.black.opacity(0.2))
+            .cornerRadius(20)
     }
 }
 

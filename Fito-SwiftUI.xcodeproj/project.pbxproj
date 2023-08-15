@@ -45,6 +45,12 @@
 		DCC5795F2A8AC4AD00F4AC17 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5795E2A8AC4AD00F4AC17 /* SpinnerView.swift */; };
 		DCC579602A8AC4AD00F4AC17 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5795E2A8AC4AD00F4AC17 /* SpinnerView.swift */; };
 		DCC579612A8AC4AD00F4AC17 /* SpinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCC5795E2A8AC4AD00F4AC17 /* SpinnerView.swift */; };
+		DCF99D0A2A8B943300D10726 /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF99D092A8B943300D10726 /* AnalysisView.swift */; };
+		DCF99D0B2A8B943300D10726 /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF99D092A8B943300D10726 /* AnalysisView.swift */; };
+		DCF99D0C2A8B943300D10726 /* AnalysisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF99D092A8B943300D10726 /* AnalysisView.swift */; };
+		DCF99D0E2A8B996200D10726 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF99D0D2A8B996200D10726 /* MockData.swift */; };
+		DCF99D0F2A8B996200D10726 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF99D0D2A8B996200D10726 /* MockData.swift */; };
+		DCF99D102A8B996200D10726 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCF99D0D2A8B996200D10726 /* MockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +109,8 @@
 		DC9C645A2A8570A70098B2B0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DCC579592A8AA9BB00F4AC17 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		DCC5795E2A8AC4AD00F4AC17 /* SpinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpinnerView.swift; sourceTree = "<group>"; };
+		DCF99D092A8B943300D10726 /* AnalysisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalysisView.swift; sourceTree = "<group>"; };
+		DCF99D0D2A8B996200D10726 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +207,7 @@
 				DC9C64572A856F110098B2B0 /* LoginView.swift */,
 				075E670F2A88BBFD00DD758D /* ProfileView.swift */,
 				DCC579592A8AA9BB00F4AC17 /* TabBarView.swift */,
+				DCF99D092A8B943300D10726 /* AnalysisView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -234,6 +243,7 @@
 				DC9C645A2A8570A70098B2B0 /* User.swift */,
 				DC1AB0DD2A879F690038E3AE /* NetworkManager.swift */,
 				DC1AB0DF2A87A1A90038E3AE /* Repository.swift */,
+				DCF99D0D2A8B996200D10726 /* MockData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -397,7 +407,9 @@
 				DC9C64012A855D4B0098B2B0 /* ContentView.swift in Sources */,
 				075E67102A88BBFD00DD758D /* ProfileView.swift in Sources */,
 				DC9C64562A8569660098B2B0 /* RegisterView.swift in Sources */,
+				DCF99D0E2A8B996200D10726 /* MockData.swift in Sources */,
 				DC9C645B2A8570A70098B2B0 /* User.swift in Sources */,
+				DCF99D0A2A8B943300D10726 /* AnalysisView.swift in Sources */,
 				DC1AB0E02A87A1A90038E3AE /* Repository.swift in Sources */,
 				DC1AB0DE2A879F690038E3AE /* NetworkManager.swift in Sources */,
 				DC9C642A2A8560200098B2B0 /* GetStartedView.swift in Sources */,
@@ -412,9 +424,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCF99D0B2A8B943300D10726 /* AnalysisView.swift in Sources */,
 				DCC5795B2A8AA9BB00F4AC17 /* TabBarView.swift in Sources */,
 				DCC579602A8AC4AD00F4AC17 /* SpinnerView.swift in Sources */,
 				DC9C64102A855D4B0098B2B0 /* Fito_SwiftUITests.swift in Sources */,
+				DCF99D0F2A8B996200D10726 /* MockData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -423,7 +437,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC9C641C2A855D4C0098B2B0 /* Fito_SwiftUIUITestsLaunchTests.swift in Sources */,
+				DCF99D102A8B996200D10726 /* MockData.swift in Sources */,
 				DCC5795C2A8AA9BB00F4AC17 /* TabBarView.swift in Sources */,
+				DCF99D0C2A8B943300D10726 /* AnalysisView.swift in Sources */,
 				DCC579612A8AC4AD00F4AC17 /* SpinnerView.swift in Sources */,
 				DC9C641A2A855D4C0098B2B0 /* Fito_SwiftUIUITests.swift in Sources */,
 			);
