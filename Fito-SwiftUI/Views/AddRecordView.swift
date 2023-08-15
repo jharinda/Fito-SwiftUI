@@ -28,8 +28,16 @@ struct AddRecordView: View {
                 DatePicker("Select Date", selection: $date, displayedComponents: .date)
                     .font(.custom("Poppins-SemiBold", size: 15))
                 
-                DropdownPicker(title: "Select Meal", selection: $selectedMealId,options: meals, displayKeyPath: \.name)
+                VStack(alignment: .leading) {
+                    Text("Select Meal")
+                    Picker("Select Meal", selection: $selectedMealId) {
+                        ForEach(meals, id: \.id) { meal in
+                            Text(meal.name)
+                        }
+                    }
+                    .pickerStyle(MenuPickerStyle())
                     .font(.custom("Poppins-SemiBold", size: 15))
+                }
                 TextField("Meal Quantity", value: $mealQuantity, format: .number)
                     .font(.custom("Poppins-SemiBold", size: 15))
                     .textFieldStyle(OvalTextFieldStyle())
@@ -39,7 +47,12 @@ struct AddRecordView: View {
                     addMeal()
                 }
                 
-                DropdownPicker(title:"Select Workout", selection: $selectedWorkoutId, options: workouts, displayKeyPath: \.name)
+                Picker("Select Workout", selection: $selectedWorkoutId) {
+                    ForEach(workouts, id: \.id) { workout in
+                        Text(workout.name)
+                    }
+                }
+                .pickerStyle(MenuPickerStyle())
                 .font(.custom("Poppins-SemiBold", size: 15))
                 TextField("Reps", value: $reps, format: .number)
                     .font(.custom("Poppins-SemiBold", size: 15))
@@ -66,14 +79,14 @@ struct AddRecordView: View {
                     }
                 }
                 
-                Button("Submit") {
-                    submitRecord()
-                }
-                .font(.custom("Poppins-SemiBold", size: 15))
-                .padding()
-                .background(Color.blue)
-                .foregroundColor(.white)
-                .cornerRadius(10)
+//               Button("Submit") {
+//                   submitRecord()
+//               }
+//                .font(.custom("Poppins-SemiBold", size: 15))
+//                .padding()
+//                .background(Color.blue)
+//                .foregroundColor(.white)
+//                .cornerRadius(10)
             }
             .padding()
         }
