@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		075E67102A88BBFD00DD758D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E670F2A88BBFD00DD758D /* ProfileView.swift */; };
+		07AB08C82A8B64AD0072F099 /* ViewRecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB08C72A8B64AC0072F099 /* ViewRecordsView.swift */; };
 		DC1AB0DE2A879F690038E3AE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AB0DD2A879F690038E3AE /* NetworkManager.swift */; };
 		DC1AB0E02A87A1A90038E3AE /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AB0DF2A87A1A90038E3AE /* Repository.swift */; };
 		DC9C63FF2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C63FE2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift */; };
@@ -72,6 +73,7 @@
 
 /* Begin PBXFileReference section */
 		075E670F2A88BBFD00DD758D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		07AB08C72A8B64AC0072F099 /* ViewRecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecordsView.swift; sourceTree = "<group>"; };
 		DC1AB0DD2A879F690038E3AE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DC1AB0DF2A87A1A90038E3AE /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		DC9C63FB2A855D4B0098B2B0 /* Fito-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fito-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +209,7 @@
 				DC9C64572A856F110098B2B0 /* LoginView.swift */,
 				075E670F2A88BBFD00DD758D /* ProfileView.swift */,
 				DCC579592A8AA9BB00F4AC17 /* TabBarView.swift */,
+				07AB08C72A8B64AC0072F099 /* ViewRecordsView.swift */,
 				DCF99D092A8B943300D10726 /* AnalysisView.swift */,
 			);
 			path = Views;
@@ -414,6 +417,7 @@
 				DC1AB0DE2A879F690038E3AE /* NetworkManager.swift in Sources */,
 				DC9C642A2A8560200098B2B0 /* GetStartedView.swift in Sources */,
 				DC9C64582A856F110098B2B0 /* LoginView.swift in Sources */,
+				07AB08C82A8B64AD0072F099 /* ViewRecordsView.swift in Sources */,
 				DCC5795A2A8AA9BB00F4AC17 /* TabBarView.swift in Sources */,
 				DCC5795F2A8AC4AD00F4AC17 /* SpinnerView.swift in Sources */,
 				DC9C63FF2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift in Sources */,
