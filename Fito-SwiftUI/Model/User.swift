@@ -18,13 +18,41 @@ struct User:Decodable, Encodable,Hashable{
     var records:[Record]?
 }
 
-struct Record:Decodable,Encodable,Hashable{
+struct Record:Decodable,Encodable,Hashable,Identifiable{
     var id:Int
     var userId:Int
     var date:String
     var weight:Float
     var recordWiseMeals:[RecordWiseMeal]
     var recordWiseWorkouts:[RecordWiseWorkout]
+    
+    func getMealCalories()-> Int {
+        var calories = 0
+       
+        recordWiseMeals.forEach{ recordWiseMeal in
+            mockMeals.forEach{meal in
+                if(meal.id == recordWiseMeal.mealId){
+                    calories += meal.kalCount
+                }
+            }
+        }
+        
+        return calories
+    }
+    
+    func getWorkoutCalories()-> Int {
+        var calories = 0
+       
+        recordWiseWorkouts.forEach{ recordWiseWorkout in
+            mockWorkouts.forEach{ workout in
+                if(workout.id == recordWiseWorkout.workoutId){
+                    calories += workout.kalCount
+                }
+            }
+        }
+        
+        return calories
+    }
 }
 
 struct RecordWiseMeal:Decodable,Encodable,Hashable{
