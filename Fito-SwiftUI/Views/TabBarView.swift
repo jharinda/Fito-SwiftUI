@@ -23,7 +23,7 @@ struct TabBarView: View {
                             Label("", systemImage: "list.bullet.rectangle")
                         }
                     
-                    ThirdView()
+            AnalysisView().frame(height: 700)
                         .tag(2)
                         .tabItem {
                             Label("", systemImage: "chart.bar.fill")
@@ -35,7 +35,8 @@ struct TabBarView: View {
                             Label("", systemImage: "person.crop.circle")
                         }
                 }
-        .accentColor(.orange) // Set tab bar item color
+        .accentColor(.orange)
+        
 
     }
 }
