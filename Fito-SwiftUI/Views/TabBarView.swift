@@ -17,7 +17,7 @@ struct TabBarView: View {
                             Label("", systemImage: "plus.circle.fill")
                         }
                     
-                    SecondView()
+                    ViewRecordsView()
                         .tag(1)
                         .tabItem {
                             Label("", systemImage: "list.bullet.rectangle")
