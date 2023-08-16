@@ -39,7 +39,7 @@ struct ProfileView: View {
             ScrollView{
                 HStack{
                     Text("Dashboard")
-                        .font(.custom("Poppins-BoldItalic", size: 40))
+                        .font(.custom("Poppins-BoldItalic", size: 30))
                         .padding()
                     Image("logout").onTapGesture {
                         currentUserEmail = ""
@@ -60,7 +60,7 @@ struct ProfileView: View {
                 HStack{
                     if let user = user {
                         Text(user.name)
-                            .font(.custom("Poppins", size: 30))
+                            .font(.custom("Poppins-SemiBold", size: 30))
                         if(user.gender=="Male"){
                             Image("male")
                         }else{
@@ -78,20 +78,20 @@ struct ProfileView: View {
                         let bmiStatus = calBMIStatus(height:user.heightInCm,weight:weight!)
                         if(bmiStatus == "Overweight"){
                             Text("Overweight")
-                                .font(.custom("Poppins", size: 15))
+                                .font(.custom("Poppins-SemiBold", size: 15))
                                 .foregroundColor(.red)
                         }else if(bmiStatus == "Underweight"){
                             Text("Underweight")
-                                .font(.custom("Poppins", size: 15))
+                                .font(.custom("Poppins-SemiBold", size: 15))
                                 .foregroundColor(.red)
                         }else if(bmiStatus == "Healthy"){
                             Text("Healthy")
-                                .font(.custom("Poppins", size: 15))
+                                .font(.custom("Poppins-SemiBold", size: 15))
                                 .foregroundColor(.green)
                         }
                     }else{
                         Text("BMI Status not available")
-                            .font(.custom("Poppins", size: 15))
+                            .font(.custom("Poppins-SemiBold", size: 15))
                             .foregroundColor(.orange)
                     }
                 }
@@ -118,7 +118,7 @@ struct ProfileView: View {
                                         )
                                     VStack{
                                         Text("\(item)")
-                                            .font(.custom("Poppins", size: 20))
+                                            .font(.custom("Poppins-SemiBold", size: 20))
                                         Text("\(metrics[data.firstIndex(of: item) ?? 0])")
                                     }
                                 }
@@ -140,7 +140,7 @@ struct ProfileView: View {
                                         )
                                     VStack{
                                         Text("\(item)")
-                                            .font(.custom("Poppins", size: 20))
+                                            .font(.custom("Poppins-SemiBold", size: 20))
                                         Text("\(metrics[data.firstIndex(of: item) ?? 0])")
                                     }
                                 }

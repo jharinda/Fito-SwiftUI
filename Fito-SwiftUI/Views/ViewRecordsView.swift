@@ -31,65 +31,61 @@ struct ViewRecordsView: View {
                 HStack{
                     Spacer()
                         if(result){
+                            if(user?.records != []){
                             List{
-                                ForEach(user?.records ?? [], id: \.self) { record in
-                                    HStack{
-                                        Text(record.date.components(separatedBy: "T").first ?? "")
-                                            .font(.custom("Poppins", size: 15))
-                                            .padding()
-                                            
-                                        Spacer()
-                                            /*Image("view")
-                                            .padding(10)
-                                            .onTapGesture {
-                                                openModal(record:record)
-                                                //print(record.id)
-                                                //print(record)
-                                            }
-                                            /*.sheet(isPresented: $isPresented) {
-                                                FullScreenModalView(record: record)
-                                            }*/*/
+                                    ForEach(user?.records ?? [], id: \.self) { record in
                                         HStack{
-                                            NavigationLink(destination: FullScreenModalView(record: record),
-                                                           label: {
-                                                Text("Preview")
-                                                    .offset(x:50)
-                                                    .font(.custom("Poppins", size: 15))
-                                            })
+                                            Text(record.date.components(separatedBy: "T").first ?? "")
+                                                .font(.custom("Poppins", size: 15))
+                                                .padding()
                                             
-                                            Image("delete")
-                                                .padding(10)
-                                                .onTapGesture {
-                                                    Task {
-                                                        await deleteRecord(id: record.id)
-                                                    }
+                                            Spacer()
+                                            HStack{
+                                                ZStack {
+                                                    Text("Preview")
+                                                    NavigationLink(destination:ViewRecordView(record: record)) {
+                                                        EmptyView()
+                                                    }.fixedSize()
+                                                    .opacity(0)
                                                 }
+                                                
+                                                Image("delete")
+                                                    .padding(10)
+                                                    .onTapGesture {
+                                                        Task {
+                                                            await deleteRecord(id: record.id)
+                                                        }
+                                                    }
+                                            }
+                                            
                                         }
-                                        
-                                    }
-                                    .listRowSeparator(.hidden)
-                                    .listRowBackground(
-                                        RoundedRectangle(cornerRadius:11)
-                                            .background(.clear)
-                                            .foregroundColor(backgroundColorList)
-                                            .padding(
-                                                EdgeInsets(
-                                                    top: 2,
-                                                    leading: 16,
-                                                    bottom: 2,
-                                                    trailing: 16
+                                        .listRowSeparator(.hidden)
+                                        .listRowBackground(
+                                            RoundedRectangle(cornerRadius:11)
+                                                .background(.clear)
+                                                .foregroundColor(backgroundColorList)
+                                                .padding(
+                                                    EdgeInsets(
+                                                        top: 2,
+                                                        leading: 16,
+                                                        bottom: 2,
+                                                        trailing: 16
+                                                    )
                                                 )
-                                            )
-                                    )
-                                }
+                                        )
+                                    }
+                                }.scrollContentBackground(.hidden)
                             }
-                            
-                            .scrollContentBackground(.hidden)
-                            
+                            else{
+                                Text("No records to show")
+                                    .font(.custom("Poppins-Regular", size: 20))
+                            }
+
                         }
                     else{
-                            Text("False")
-                        }
+                        SpinnerView()
+                        
+                    }
                     Spacer()
                 }
                 
@@ -136,14 +132,13 @@ struct ViewRecordsView: View {
     }
     
     func getCurrentUserRecords() async{
-        guard let url = URL(string: USER_API_URL + "/" + "jharinda@gmail.com") else { fatalError("Missing URL") }
+        guard let url = URL(string: USER_API_URL + "/" + currentUserEmail) else { fatalError("Missing URL") }
         
         do {
             let (data, _) = try await URLSession.shared.data(from: url)
             let decodedUsers = try JSONDecoder().decode(User.self, from: data)
             DispatchQueue.main.async {
                 user = decodedUsers
-                print(user?.records)
             }
             
         }catch{
@@ -161,61 +156,63 @@ struct ViewRecordsView: View {
     }
 }
 
-struct FullScreenModalView: View {
+struct ViewRecordView: View {
     @State var record: Record
     
     @State private var meals: [Meal] = []
     @State private var workouts: [Workout] = []
     
-    @Environment(\.presentationMode) var presentationMode
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Date: \(record.date.components(separatedBy: "T").first ?? "")")
-                .font(.custom("Poppins", size: 20))
-                .padding()
-            Text("Weight: \(record.weight, specifier: "%.2f")")
-                .font(.custom("Poppins", size: 20))
-                .padding()
-            
-            Text("Meals")
-                .font(.custom("Poppins", size: 20))
-                .padding()
-            
-            Text(String(record.id))
-            
-            ForEach(record.recordWiseMeals, id: \.id) { mealwiseRecord in
-                //if let matchedMeal = meals.first(where: { $0.id == mealwiseRecord.mealId }) {
-                    VStack(alignment: .leading){
-                        //let calories = mealwiseRecord.mealQuantity * matchedMeal.kalCount
-                        Text("Meal: \(mealwiseRecord.mealId)")
-                        //Text("Calories: \(calories)")
-                   // }
-                }
-                
-            Text("Workouts")
+        VStack{
+            ScrollView(.vertical){
+                Text("Date: \(record.date.components(separatedBy: "T").first ?? "")")
                     .font(.custom("Poppins", size: 20))
                     .padding()
-            ForEach(record.recordWiseWorkouts, id: \.recordId) { workoutwiseRecord in
-                    if let matchedWorkout = workouts.first(where: { $0.id == workoutwiseRecord.workoutId }) {
-                        VStack(alignment: .leading){
-                            let calories = workoutwiseRecord.reps * matchedWorkout.kalCount
-                            Text("Meal: \(matchedWorkout.name)")
-                            Text("Calories: \(calories)")
+                Text("Weight: \(record.weight, specifier: "%.2f")")
+                    .font(.custom("Poppins", size: 20))
+                    .padding()
+                
+                Text("Meals")
+                    .font(.custom("Poppins", size: 20))
+                    .padding()
+                
+                if(!meals.isEmpty && !workouts.isEmpty){
+                    ForEach(record.recordWiseMeals, id: \.id) { mealwiseRecord in
+                        if let matchedMeal = meals.first(where: { $0.id == mealwiseRecord.mealId }) {
+                            VStack{
+                                let calories = mealwiseRecord.mealQuantity * matchedMeal.kalCount
+                                Text("Meal: \(matchedMeal.name)")
+                                Text("Calories: \(calories)")
+                            }.padding()
                         }
                     }
+                    
+                    
+                    Text("Workouts")
+                        .font(.custom("Poppins", size: 20))
+                        .padding()
+                    ForEach(record.recordWiseWorkouts, id: \.recordId) { workoutwiseRecord in
+                        if let matchedWorkout = workouts.first(where: { $0.id == workoutwiseRecord.workoutId }) {
+                            VStack{
+                                let calories = workoutwiseRecord.reps * matchedWorkout.kalCount
+                                Text("Workout: \(matchedWorkout.name)")
+                                Text("Calories: \(calories)")
+                            }.padding()
+                        }
+                    }
+                    
+                }else{
+                    SpinnerView()
+                        .padding()
                 }
-                
             }
-            .padding()
-            .onTapGesture {
-                presentationMode.wrappedValue.dismiss()
-            }
-            .task {
-                await getMeals()
-                await getWorkouts()
-            }
-        }.onAppear{
-            print("new modal record id" + String(record.id))
+            Spacer()
+            
+        }
+        .scrollIndicators(.hidden)
+        .task {
+            await getMeals()
+            await getWorkouts()
         }
     }
     
