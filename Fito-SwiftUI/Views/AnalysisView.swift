@@ -90,7 +90,6 @@ struct AnalysisView: View {
     }
     
     func getCurrentUserDetails() async{
-        currentUserEmail = "jharinda@gmail.com"
         guard let url = URL(string: USER_API_URL + "/" + currentUserEmail) else { fatalError("Missing URL") }
         
         do {

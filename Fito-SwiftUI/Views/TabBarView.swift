@@ -11,7 +11,7 @@ struct TabBarView: View {
     @State private var selectedIndex = 0
     var body: some View {
         TabView(selection: $selectedIndex) {
-                    FirstView()
+                    AddRecordView()
                         .tag(0)
                         .tabItem {
                             Label("", systemImage: "plus.circle.fill")
