@@ -271,7 +271,8 @@ struct AddRecordView: View {
                 }else{
                     SpinnerView()
                 }
-            }.onAppear{loadSavedData()}
+            }.onTapGesture{hideKeyboard()}
+            .onAppear{loadSavedData()}
             .task{
                 async let workoutsTask = getWorkouts()
                 async let mealsTask = getMeals()
