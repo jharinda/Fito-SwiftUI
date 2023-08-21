@@ -10,6 +10,7 @@
 		075E67102A88BBFD00DD758D /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E670F2A88BBFD00DD758D /* ProfileView.swift */; };
 		07856CC72A8CB5C900A9BC96 /* AddRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07856CC62A8CB5C900A9BC96 /* AddRecordView.swift */; };
 		07AB08C82A8B64AD0072F099 /* ViewRecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB08C72A8B64AC0072F099 /* ViewRecordsView.swift */; };
+		07B0B5D32A93429900B452CD /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0B5D22A93429900B452CD /* HideKeyboard.swift */; };
 		DC1AB0DE2A879F690038E3AE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AB0DD2A879F690038E3AE /* NetworkManager.swift */; };
 		DC1AB0E02A87A1A90038E3AE /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AB0DF2A87A1A90038E3AE /* Repository.swift */; };
 		DC9C63FF2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C63FE2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift */; };
@@ -76,6 +77,7 @@
 		075E670F2A88BBFD00DD758D /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		07856CC62A8CB5C900A9BC96 /* AddRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRecordView.swift; sourceTree = "<group>"; };
 		07AB08C72A8B64AC0072F099 /* ViewRecordsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRecordsView.swift; sourceTree = "<group>"; };
+		07B0B5D22A93429900B452CD /* HideKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideKeyboard.swift; sourceTree = "<group>"; };
 		DC1AB0DD2A879F690038E3AE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DC1AB0DF2A87A1A90038E3AE /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		DC9C63FB2A855D4B0098B2B0 /* Fito-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fito-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -142,6 +144,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07B0B5D12A93428700B452CD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				07B0B5D22A93429900B452CD /* HideKeyboard.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		DC9C63F22A855D4A0098B2B0 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +175,7 @@
 		DC9C63FD2A855D4B0098B2B0 /* Fito-SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				07B0B5D12A93428700B452CD /* Extensions */,
 				DCC5795D2A8AC49300F4AC17 /* Components */,
 				DC9C64592A8570790098B2B0 /* Model */,
 				DC9C642E2A8562210098B2B0 /* Info.plist */,
@@ -418,6 +429,7 @@
 				DCF99D0A2A8B943300D10726 /* AnalysisView.swift in Sources */,
 				DC1AB0E02A87A1A90038E3AE /* Repository.swift in Sources */,
 				DC1AB0DE2A879F690038E3AE /* NetworkManager.swift in Sources */,
+				07B0B5D32A93429900B452CD /* HideKeyboard.swift in Sources */,
 				DC9C642A2A8560200098B2B0 /* GetStartedView.swift in Sources */,
 				DC9C64582A856F110098B2B0 /* LoginView.swift in Sources */,
 				07856CC72A8CB5C900A9BC96 /* AddRecordView.swift in Sources */,

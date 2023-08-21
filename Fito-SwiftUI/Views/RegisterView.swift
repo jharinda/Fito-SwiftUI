@@ -107,6 +107,8 @@ struct RegisterView: View {
                     }
                 }
             }
+        }.onTapGesture {
+            hideKeyboard()
         }
     }
     @State private var registrationStatus = ""
