@@ -23,7 +23,7 @@ struct TabBarView: View {
                             Label("", systemImage: "list.bullet.rectangle")
                         }
                     
-            AnalysisView().frame(height: 700)
+                    AnalysisView()
                         .tag(2)
                         .tabItem {
                             Label("", systemImage: "chart.bar.fill")

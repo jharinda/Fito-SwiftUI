@@ -37,7 +37,7 @@ struct AddRecordView: View {
     @AppStorage("recordWorkout") var recordWorkout: String?
     @AppStorage("recordReps") var recordReps: String?
     
-    @AppStorage("currentUserId") var currentUserId = ""
+    @AppStorage("currentUserId") var currentUserId = 0
     
     @State var isClicked : Bool = false
 
@@ -318,9 +318,9 @@ struct AddRecordView: View {
         }else{
             let dateString = "\(date)"
             let dateOnly = dateString.split(separator: " ").first ?? ""
-            print(dateOnly)
             
-            self.record = Record(id: 0, userId: Int(currentUserId) ?? 0, date: String(dateOnly), weight: Float(weight) ?? 0, recordWiseMeals: recordWiseMeals, recordWiseWorkouts: recordWiseWorkouts)
+            self.record = Record(id: 0, userId: currentUserId, date: String(dateOnly), weight: Float(weight) ?? 0, recordWiseMeals: recordWiseMeals, recordWiseWorkouts: recordWiseWorkouts)
+            print(self.record)
             
             guard let url = URL(string: USER_API_URL + "/Record") else {
                 status = "Invalid URL"
@@ -380,6 +380,8 @@ struct AddRecordView: View {
         reps = ""
         selectedMeals = []
         selectedWorkouts = []
+        recordWiseMeals = []
+        recordWiseWorkouts = []
     }
 }
 

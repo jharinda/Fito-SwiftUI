@@ -12,78 +12,86 @@ struct AnalysisView: View {
     @AppStorage("currentUserEmail") var currentUserEmail = ""
     @State var user : User?
     var body: some View {
-        ZStack{
-        
         VStack{
-            Text("Insights")
-                .font(.custom("Poppins-BoldItalic", size: 30))
-                .padding()
-            ScrollView {
-                if user != nil {
-                    
-                    Text("Weight distribution")
-                        .font(.custom("Poppins-SemiBold", size: 15))
-                        .padding(.vertical,10)
-                    Chart{
-                        if(user?.records?.count ?? 0 > 0){
-                            ForEach((user?.records)!){ record in
-                                LineMark(
-                                    x: .value("Date", record.date),
-                                    y: .value("Weight", record.weight)
-                                )
-                                .foregroundStyle(Color.blue.gradient).cornerRadius(10)
-                            }
-                            
-                        }
-                    }.frame(height: 180)
-                    
-                    Text("Meal calories")
-                        .font(.custom("Poppins-SemiBold", size: 15))
-                        .padding(.vertical,10)
-                    
-                    Chart{
-                        if(user?.records?.count ?? 0 > 0){
-                            //RuleMark(y:.value("Goal", 500))
-                            
-                            ForEach((user?.records)!){ record in
-                                BarMark(
-                                    x: .value("Date", record.date),
-                                    y: .value("Meal", record.getMealCalories())
-                                )
-                                .foregroundStyle(Color.orange.gradient).cornerRadius(10)
-                            }
-                            
-                        }
-                    }.frame(height: 180)
-                    
-                    Text("Workouts calories")
-                        .font(.custom("Poppins-SemiBold", size: 15))
-                        .padding(.vertical,10)
-                    
-                    Chart{
-                        if(user?.records?.count ?? 0 > 0){
-                            ForEach((user?.records)!){ record in
-                                BarMark(
-                                    
-                                    x: .value("Date", record.date),
-                                    y: .value("Workouts", record.getWorkoutCalories())
-                                )
-                                .foregroundStyle(Color.pink.gradient).cornerRadius(10)
-                            }
-                            
-                        }
-                    }.frame(height: 180)
-                } else{
-                    SpinnerView().offset(y:20)
+            ScrollView{
+                HStack{
+                    Text("Insights")
+                        .font(.custom("Poppins-BoldItalic", size: 30))
+                        .padding()
                 }
+                
+                Spacer()
+                
+                VStack{
+                    
+                    if user != nil {
+                        
+                        Text("Weight distribution")
+                            .font(.custom("Poppins-SemiBold", size: 15))
+                            .padding(.vertical,10)
+                        Chart{
+                            if(user?.records?.count ?? 0 > 0){
+                                ForEach((user?.records)!){ record in
+                                    LineMark(
+                                        x: .value("Date", record.date),
+                                        y: .value("Weight", record.weight)
+                                    )
+                                    .foregroundStyle(Color.blue.gradient).cornerRadius(10)
+                                }
+                                
+                            }
+                        }.frame(height: 180)
+                        
+                        Text("Meal calories")
+                            .font(.custom("Poppins-SemiBold", size: 15))
+                            .padding(.vertical,10)
+                        
+                        Chart{
+                            if(user?.records?.count ?? 0 > 0){
+                                //RuleMark(y:.value("Goal", 500))
+                                
+                                ForEach((user?.records)!){ record in
+                                    BarMark(
+                                        x: .value("Date", record.date),
+                                        y: .value("Meal", record.getMealCalories())
+                                    )
+                                    .foregroundStyle(Color.orange.gradient).cornerRadius(10)
+                                }
+                                
+                            }
+                        }.frame(height: 180)
+                        
+                        Text("Workouts calories")
+                            .font(.custom("Poppins-SemiBold", size: 15))
+                            .padding(.vertical,10)
+                        
+                        Chart{
+                            if(user?.records?.count ?? 0 > 0){
+                                ForEach((user?.records)!){ record in
+                                    BarMark(
+                                        
+                                        x: .value("Date", record.date),
+                                        y: .value("Workouts", record.getWorkoutCalories())
+                                    )
+                                    .foregroundStyle(Color.pink.gradient).cornerRadius(10)
+                                }
+                                
+                            }
+                        }.frame(height: 180)
+                    } else{
+                        SpinnerView().offset(y:20)
+                    }
+                }.padding(.horizontal,40)
+                
+                
             }
-            //.frame(height: UIScreen.main.bounds.height)
-            .padding(.horizontal,40)
-        }
-        
-        .task {
+            .background(alignment: .topLeading) {
+                Image("background")
+                    .edgesIgnoringSafeArea(.all)
+            }
+
+        }.task{
             await getCurrentUserDetails()
-        }
         }
             
         
