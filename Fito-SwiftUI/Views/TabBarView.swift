@@ -46,35 +46,3 @@ struct TabBarView_Previews: PreviewProvider {
         TabBarView()
     }
 }
-
-struct FirstView: View {
-    var body: some View {
-        Text("First View")
-            .background(Color.red)
-            .navigationBarTitle("First", displayMode: .inline)
-    }
-}
-
-struct SecondView: View {
-    var body: some View {
-        Text("Second View")
-            .background(Color.green)
-            .navigationBarTitle("Second", displayMode: .inline)
-    }
-}
-
-struct ThirdView: View {
-    var body: some View {
-        Text("Third View")
-            .background(Color.blue)
-            .navigationBarTitle("Third", displayMode: .inline)
-    }
-}
-
-struct FourthView: View {
-    var body: some View {
-        Text("Fourth View")
-            .background(Color.purple)
-            .navigationBarTitle("Fourth", displayMode: .inline)
-    }
-}
