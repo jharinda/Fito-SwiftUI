@@ -24,7 +24,7 @@ struct ViewRecordsView: View {
         VStack{
                 HStack{
                     Text("Records")
-                        .font(.custom("Poppins-BoldItalic", size: 40))
+                        .font(.custom("Poppins-BoldItalic", size: 30))
                         .padding()
                 }
                 
