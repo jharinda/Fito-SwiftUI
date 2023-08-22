@@ -165,6 +165,7 @@ struct AddRecordView: View {
                                         recordWiseWorkouts.append(RecordWiseWorkout(id: 0, recordId: 0, workoutId: workoutId, reps: Int(reps) ?? 0))
                                         workoutValue = ""
                                         reps = ""
+                                        print("recordwise workouts - ", recordWiseWorkouts)
                                     }
                             }
                             HStack{
@@ -300,15 +301,19 @@ struct AddRecordView: View {
     
     func addRecord() -> String {
         var status = ""
+        print(recordWiseMeals)
+        print(recordWiseWorkouts)
 
         if(weight == "" || selectedMeals == [] || selectedWorkouts == [] ){
             return "failed"
         }else{
             let dateString = "\(date)"
+            print("date - ",date)
             let dateOnly = dateString.split(separator: " ").first ?? ""
+            let timeOnly = dateString.split(separator: " ")[1] ?? ""
             
-            self.record = Record(id: 0, userId: currentUserId, date: String(dateOnly), weight: Float(weight) ?? 0, recordWiseMeals: recordWiseMeals, recordWiseWorkouts: recordWiseWorkouts)
-            print(self.record)
+            self.record = Record(id: 0, userId: currentUserId, date: dateOnly+"T"+timeOnly, weight: Float(weight) ?? 0, recordWiseMeals: recordWiseMeals, recordWiseWorkouts: recordWiseWorkouts)
+            print("record - ",self.record)
             
             guard let url = URL(string: USER_API_URL + "/Record") else {
                 status = "Invalid URL"
