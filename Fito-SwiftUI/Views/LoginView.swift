@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     var actionPerformed:((ProjectAction) -> Void)?
     @AppStorage("currentUserEmail") var currentUserEmail = ""
+    @AppStorage("currentUserId") var currentUserId = 0
     @State var email = "";
     @State var password = "";
     @State var errorMessage = ""
@@ -82,8 +83,8 @@ struct LoginView: View {
     }
     
     func loginAsync(email:String, password:String) -> Bool{
-        @AppStorage("currentUserId") var currentUserId = 0
-        currentUserId = 0;
+       // @AppStorage("currentUserId") var currentUserId = 0
+        //currentUserId = 0;
         var tempUser = User(id: 0, name: "", password:password, email: email, age: 0, heightInCm: 0, gender: "")
         var status = ""
         guard let url = URL(string: USER_API_URL + "/validate") else {

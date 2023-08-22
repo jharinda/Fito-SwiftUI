@@ -32,8 +32,9 @@ struct ViewRecordsView: View {
                     Spacer()
                         if(result){
                             if(user?.records != []){
-                            List{
+                                List{
                                     ForEach(user?.records ?? [], id: \.self) { record in
+                                        if(record.recordWiseMeals != [] && record.recordWiseWorkouts != []){
                                         HStack{
                                             Text(record.date.components(separatedBy: "T").first ?? "")
                                                 .font(.custom("Poppins", size: 15))
@@ -46,7 +47,7 @@ struct ViewRecordsView: View {
                                                     NavigationLink(destination:ViewRecordView(record: record)) {
                                                         EmptyView()
                                                     }.fixedSize()
-                                                    .opacity(0)
+                                                        .opacity(0)
                                                 }
                                                 
                                                 Image("delete")
@@ -74,6 +75,8 @@ struct ViewRecordsView: View {
                                                 )
                                         )
                                     }
+                                    
+                                }
                                 }.scrollContentBackground(.hidden)
                             }
                             else{
@@ -139,6 +142,7 @@ struct ViewRecordsView: View {
             let decodedUsers = try JSONDecoder().decode(User.self, from: data)
             DispatchQueue.main.async {
                 user = decodedUsers
+                print(user)
             }
             
         }catch{

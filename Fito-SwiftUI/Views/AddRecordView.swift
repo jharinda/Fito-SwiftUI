@@ -11,13 +11,13 @@ struct AddRecordView: View {
     
     @State var result = ""
     @State var date = Date()
-    @State var weight = "";
-    @State var quantity = "";
-    @State var reps = "";
+    @AppStorage("weight") var weight = "";
+    @AppStorage("quantity") var quantity = "";
+    @AppStorage("reps") var reps = "";
     @State var record: Record?
     
-    @State var mealValue = ""
-    @State var workoutValue = ""
+    @AppStorage("mealValue") var mealValue = ""
+    @AppStorage("workoutValue") var workoutValue = ""
     
     @State var selectedMeals : [String] = []
     @State var selectedWorkouts : [String] = []
@@ -31,15 +31,10 @@ struct AddRecordView: View {
     @State private var recordWiseMeals: [RecordWiseMeal] = []
     @State private var recordWiseWorkouts: [RecordWiseWorkout] = []
     
-    @AppStorage("recordWeight") var recordWeight : String?
-    @AppStorage("recordMeal") var recordMeal: String?
-    @AppStorage("recordQuantity") var recordQuantity: String?
-    @AppStorage("recordWorkout") var recordWorkout: String?
-    @AppStorage("recordReps") var recordReps: String?
-    
-    @AppStorage("currentUserId") var currentUserId = ""
+    @AppStorage("currentUserId") var currentUserId = 0
     
     @State var isClicked : Bool = false
+    @State private var showText = true
 
     @State private var textboxColor : Color = Color(red: 217/255, green: 217/255, blue: 217/255)
     @State private var textColor : Color = Color(red: 134 / 255, green: 134 / 255, blue: 134 / 255)
@@ -72,9 +67,6 @@ struct AddRecordView: View {
                                 .background(textboxColor)
                                 .cornerRadius(20.0)
                                 .keyboardType(.decimalPad)
-                                .onChange(of: weight){ weight in
-                                    recordWeight = weight
-                                }
                             
                             HStack{
                                 
@@ -100,9 +92,6 @@ struct AddRecordView: View {
                                         .padding()
                                         .background(textboxColor)
                                         .cornerRadius(20.0)
-                                        .onChange(of: mealValue){ mealValue in
-                                            recordMeal = mealValue
-                                        }
                                     }
                                 }
                                 
@@ -113,10 +102,7 @@ struct AddRecordView: View {
                                     .cornerRadius(20.0)
                                     .keyboardType(.decimalPad)
                                     .frame(width: 100)
-                                    .onChange(of: quantity){ quantity in
-                                        recordQuantity = quantity
-                                    }
-                                
+
                                 Image("add")
                                     .onTapGesture {
                                         print("add meal")
@@ -128,6 +114,8 @@ struct AddRecordView: View {
                                             }
                                         }
                                         recordWiseMeals.append(RecordWiseMeal(id: 0, recordId: 0, mealId: mealId, mealQuantity: Int(quantity) ?? 0))
+                                        mealValue = ""
+                                        quantity = ""
                                     
                                     }
                             }
@@ -154,9 +142,6 @@ struct AddRecordView: View {
                                         .padding()
                                         .background(textboxColor)
                                         .cornerRadius(20.0)
-                                        .onChange(of: workoutValue){ workoutValue in
-                                            recordWorkout = workoutValue
-                                        }
                                     }
                                 }
                                 
@@ -167,13 +152,9 @@ struct AddRecordView: View {
                                     .cornerRadius(20.0)
                                     .keyboardType(.decimalPad)
                                     .frame(width: 100)
-                                    .onChange(of: reps){ reps in
-                                        recordReps = reps
-                                    }
                                 
                                 Image("add")
                                     .onTapGesture {
-                                        print("add workout")
                                         selectedWorkouts.append("\(reps)" + " " + "\(workoutValue)")
                                         var workoutId = 0
                                         workouts.forEach{ workout in
@@ -182,6 +163,8 @@ struct AddRecordView: View {
                                             }
                                         }
                                         recordWiseWorkouts.append(RecordWiseWorkout(id: 0, recordId: 0, workoutId: workoutId, reps: Int(reps) ?? 0))
+                                        workoutValue = ""
+                                        reps = ""
                                     }
                             }
                             HStack{
@@ -237,6 +220,10 @@ struct AddRecordView: View {
                                                         
                             Button(action: {
                                     result = addRecord()
+                                    showText = true
+                                    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+                                        showText = false
+                                    }
                             })
                             {
                                 Text("Submit").font(.custom("Poppins-SemiBold", size: 15)).padding(.horizontal,70)
@@ -252,11 +239,13 @@ struct AddRecordView: View {
                                     .font(.custom("Poppins-SemiBold", size: 15))
                                     .padding()
                                     .foregroundColor(.red)
+                                    .opacity(showText ? 1 : 0)
                             }else if(result == "success"){
                                 Text("Record added!")
                                     .font(.custom("Poppins-SemiBold", size: 15))
                                     .padding()
                                     .foregroundColor(.green)
+                                    .opacity(showText ? 1 : 0)
                             }
                          
                             Spacer()
@@ -272,7 +261,6 @@ struct AddRecordView: View {
                     SpinnerView()
                 }
             }.onTapGesture{hideKeyboard()}
-            .onAppear{loadSavedData()}
             .task{
                 async let workoutsTask = getWorkouts()
                 async let mealsTask = getMeals()
@@ -318,9 +306,9 @@ struct AddRecordView: View {
         }else{
             let dateString = "\(date)"
             let dateOnly = dateString.split(separator: " ").first ?? ""
-            print(dateOnly)
             
-            self.record = Record(id: 0, userId: Int(currentUserId) ?? 0, date: String(dateOnly), weight: Float(weight) ?? 0, recordWiseMeals: recordWiseMeals, recordWiseWorkouts: recordWiseWorkouts)
+            self.record = Record(id: 0, userId: currentUserId, date: String(dateOnly), weight: Float(weight) ?? 0, recordWiseMeals: recordWiseMeals, recordWiseWorkouts: recordWiseWorkouts)
+            print(self.record)
             
             guard let url = URL(string: USER_API_URL + "/Record") else {
                 status = "Invalid URL"
@@ -364,14 +352,6 @@ struct AddRecordView: View {
         
     }
     
-    func loadSavedData(){
-        weight = UserDefaults.standard.string(forKey: "recordWeight") ?? ""
-        mealValue = UserDefaults.standard.string(forKey: "recordMeal") ?? ""
-        quantity = UserDefaults.standard.string(forKey: "recordQuantity") ?? ""
-        workoutValue = UserDefaults.standard.string(forKey: "recordWorkout") ?? ""
-        reps = UserDefaults.standard.string(forKey: "recordReps") ?? ""
-    }
-    
     func clearData(){
         weight = ""
         mealValue = ""
@@ -380,6 +360,8 @@ struct AddRecordView: View {
         reps = ""
         selectedMeals = []
         selectedWorkouts = []
+        recordWiseMeals = []
+        recordWiseWorkouts = []
     }
 }
 
