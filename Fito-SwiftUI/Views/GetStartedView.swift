@@ -31,6 +31,7 @@ struct GetStartedView: View {
                             .background(.black)
                             .foregroundColor(.white)
                             .cornerRadius(60)
+                            .accessibilityIdentifier("GetStartedButton") // Added accessibility identifier for UI testing
                     })
             }
             

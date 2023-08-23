@@ -28,10 +28,12 @@ struct LoginView: View {
                     .keyboardType(.emailAddress)
                     .padding(.vertical,0)
                     .padding(.horizontal,40)
+                    .accessibilityIdentifier("EmailTextField") // Added accessibility identifier
                 
                 SecureField("Password",text:$password).font(.custom("Poppins-SemiBold", size: 15)).textFieldStyle(OvalTextFieldStyle())
                     .padding(.vertical,0)
                     .padding(.horizontal,40)
+                    .accessibilityIdentifier("PasswordSecureField") // Added accessibility identifier
                 
                 HStack{
                     Text("Don't have an account ? ")

@@ -58,15 +58,19 @@ struct AddRecordView: View {
                         VStack{
                             Spacer()
                             DatePicker("Date", selection: $date,displayedComponents: [.date])
+                                .accessibilityIdentifier("DateDatePicker") // Added accessibility identifier
                                 .font(.custom("Poppins-Regular", size: 15))
                                 .foregroundColor(textColor)
                                 .textFieldStyle(.plain)
                                 .padding()
                                 .background(textboxColor)
                                 .cornerRadius(20.0)
-                            
+                                
+                                                
                             
                             TextField("Weight",text:$weight).font(.custom("Poppins-SemiBold", size: 15))
+                                .accessibilityIdentifier("WeightTextField") // Added accessibility identifier
+                                                
                                 .textFieldStyle(.plain)
                                 .padding()
                                 .background(textboxColor)
@@ -103,7 +107,8 @@ struct AddRecordView: View {
                                         .onChange(of: mealValue){ mealValue in
                                             recordMeal = mealValue
                                         }
-                                    }
+                                    }.accessibilityIdentifier("MealMenu") // Added accessibility identifier
+
                                 }
                                 
                                 TextField("Quantity",text:$quantity).font(.custom("Poppins-SemiBold", size: 15))
@@ -239,21 +244,29 @@ struct AddRecordView: View {
                                     result = addRecord()
                             })
                             {
-                                Text("Submit").font(.custom("Poppins-SemiBold", size: 15)).padding(.horizontal,70)
+                                Text("Submit")
+                                    .accessibilityIdentifier("SubmitButton") // Added accessibility identifier
+                                                        
+                                    .font(.custom("Poppins-SemiBold", size: 15)).padding(.horizontal,70)
                             }
                             .padding()
                             .foregroundColor(.white)
                             .background(Color.black)
                             .cornerRadius(57)
                             .offset(y:15)
+                            
 
                             if(result == "failed"){
                                 Text("Failed to add record")
+                                    .accessibilityIdentifier("ResultText") // Added accessibility identifier
+                                                        
                                     .font(.custom("Poppins-SemiBold", size: 15))
                                     .padding()
                                     .foregroundColor(.red)
                             }else if(result == "success"){
                                 Text("Record added!")
+                                    .accessibilityIdentifier("ResultText") // Added accessibility identifier
+                                                        
                                     .font(.custom("Poppins-SemiBold", size: 15))
                                     .padding()
                                     .foregroundColor(.green)
