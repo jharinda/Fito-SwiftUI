@@ -24,7 +24,8 @@ struct RegisterView: View {
         ZStack{
             Color.yellow.ignoresSafeArea()
             VStack{
-                Text("Register").font(.custom("Poppins-BoldItalic", size: 30)).offset(y:-40)
+                ScrollView{
+                    Text("Register").font(.custom("Poppins-BoldItalic", size: 30)).padding(.top,80)
                 
                 TextField("Name",text:$name).font(.custom("Poppins-SemiBold", size: 15)).textFieldStyle(OvalTextFieldStyle())
                     .padding(.vertical,0)
@@ -106,7 +107,7 @@ struct RegisterView: View {
                         SpinnerView().offset(y:20)
                     }
                 }
-            }
+            }}
         }.onTapGesture {
             hideKeyboard()
         }

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TabBarView: View {
-    @State private var selectedIndex = 0
+    @State private var selectedIndex = 3
     var body: some View {
         TabView(selection: $selectedIndex) {
                     AddRecordView()

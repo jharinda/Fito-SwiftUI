@@ -85,10 +85,7 @@ struct AnalysisView: View {
                 
                 
             }
-            .background(alignment: .topLeading) {
-                Image("background")
-                    .edgesIgnoringSafeArea(.all)
-            }
+            
 
         }.task{
             await getCurrentUserDetails()
