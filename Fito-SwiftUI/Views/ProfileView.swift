@@ -262,10 +262,10 @@ struct ProfileView: View {
             }
         
         if(calorieIntake > caloriesBurned){
-            return "G"
+            return "Gaining"
         }
         else{
-            return "L"
+            return "Loosing"
         }
         
         }
