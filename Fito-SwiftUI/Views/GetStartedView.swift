@@ -14,6 +14,8 @@ enum ProjectAction{
 }
 
 struct GetStartedView: View {
+    @State private var size = 0.8;
+    @State private var opacity = 0.5
     var actionPerformed:((ProjectAction) -> Void); //?
     var body: some View {
         ZStack{     Color.yellow.ignoresSafeArea()
@@ -22,6 +24,14 @@ struct GetStartedView: View {
                 
                 Text("Fito")
                     .font(.custom("Poppins-BoldItalic", size: 40))
+                    .scaleEffect(size)
+                        .opacity(opacity)
+                        .onAppear{
+                            withAnimation(.easeIn(duration: 1.2)){
+                                self.size = 1
+                                self.opacity = 1
+                            }
+                        }
                 Spacer()
                 NavigationLink(destination: RegisterView().navigationBarHidden(true)
                     .navigationBarBackButtonHidden(true), label: {

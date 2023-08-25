@@ -32,6 +32,9 @@ struct ProfileView: View {
     let columns = [
         GridItem(.adaptive(minimum: 120))
     ]
+    
+    @State private var size = 0.8;
+    @State private var opacity = 0.5
 
     var body: some View {
         VStack{
@@ -123,7 +126,14 @@ struct ProfileView: View {
                                         Text("\(item)")
                                             .font(.custom("Poppins-SemiBold", size: 20))
                                         Text("\(metrics[data.firstIndex(of: item) ?? 0])")
-                                    }
+                                    }.scaleEffect(size)
+                                        .opacity(opacity)
+                                        .onAppear{
+                                            withAnimation(.easeIn(duration: 1.2)){
+                                                self.size = 1
+                                                self.opacity = 1
+                                            }
+                                        }
                                 }
                             }
                         }else if(user.records!.isEmpty){
