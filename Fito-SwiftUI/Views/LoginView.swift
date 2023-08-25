@@ -29,10 +29,12 @@ struct LoginView: View {
                     .keyboardType(.emailAddress)
                     .padding(.vertical,0)
                     .padding(.horizontal,40)
+                    .accessibilityIdentifier("EmailTextField1") // Added accessibility identifier
                 
                 SecureField("Password",text:$password).font(.custom("Poppins-SemiBold", size: 15)).textFieldStyle(OvalTextFieldStyle())
                     .padding(.vertical,0)
                     .padding(.horizontal,40)
+                    .accessibilityIdentifier("PasswordSecureField1") // Added accessibility identifier
                 
                 HStack{
                     Text("Don't have an account ? ")
@@ -57,6 +59,8 @@ struct LoginView: View {
                 .background(Color.black)
                 .cornerRadius(57)
                 .offset(y:5)
+                .accessibilityIdentifier("LoginButton") // Add accessibility identifier to the Login button
+                
                 
                 NavigationLink(destination: TabBarView().navigationBarBackButtonHidden(true), isActive: $isLoggedIn) { EmptyView() }
                 
@@ -70,7 +74,8 @@ struct LoginView: View {
                 }
                 
             }
-        }.onTapGesture {
+        }
+        .onTapGesture {
             hideKeyboard()
         }
     }
@@ -91,7 +96,7 @@ struct LoginView: View {
             status = "Invalid URL"
             return false
         }
-        
+
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

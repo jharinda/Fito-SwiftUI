@@ -81,3 +81,7 @@ struct Workout:Decodable,Encodable,Hashable{
     var kalCount:Int
 }
 
+struct MockDataProvider: Decodable,Encodable,Hashable {
+    var mockMeals: [Meal]
+    var mockWorkouts: [Workout]
+}

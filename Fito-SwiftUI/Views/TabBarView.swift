@@ -15,25 +15,25 @@ struct TabBarView: View {
                         .tag(0)
                         .tabItem {
                             Label("", systemImage: "plus.circle.fill")
-                        }
+                        }.accessibilityIdentifier("addRecordButton")
                     
                     ViewRecordsView()
                         .tag(1)
                         .tabItem {
                             Label("", systemImage: "list.bullet.rectangle")
-                        }
+                        }.accessibilityIdentifier("viewRecordsButton")
                     
                     AnalysisView()
                         .tag(2)
                         .tabItem {
                             Label("", systemImage: "chart.bar.fill")
-                        }
+                        }.accessibilityIdentifier("analyzeDataButton")
                     
                     ProfileView()
                         .tag(3)
                         .tabItem {
                             Label("", systemImage: "person.crop.circle")
-                        }
+                        }.accessibilityIdentifier("viewProfileButton")
                 }
         .accentColor(.orange)
         

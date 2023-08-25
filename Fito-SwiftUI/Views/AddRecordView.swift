@@ -25,11 +25,11 @@ struct AddRecordView: View {
     var placeholderMeals = "Meal"
     var placeholderWorkouts = "Workout"
     
-    @State private var meals: [Meal] = []
-    @State private var workouts: [Workout] = []
+    @State public var meals: [Meal] = []
+    @State public var workouts: [Workout] = []
     
-    @State private var recordWiseMeals: [RecordWiseMeal] = []
-    @State private var recordWiseWorkouts: [RecordWiseWorkout] = []
+    @State public var recordWiseMeals: [RecordWiseMeal] = []
+    @State public var recordWiseWorkouts: [RecordWiseWorkout] = []
     
     @AppStorage("currentUserId") var currentUserId = 0
     
@@ -53,15 +53,19 @@ struct AddRecordView: View {
                         VStack{
                             Spacer()
                             DatePicker("Date", selection: $date,displayedComponents: [.date])
+                                .accessibilityIdentifier("DateDatePicker") // Added accessibility identifier
                                 .font(.custom("Poppins-Regular", size: 15))
                                 .foregroundColor(textColor)
                                 .textFieldStyle(.plain)
                                 .padding()
                                 .background(textboxColor)
                                 .cornerRadius(20.0)
-                            
+                                
+                                                
                             
                             TextField("Weight",text:$weight).font(.custom("Poppins-SemiBold", size: 15))
+                                .accessibilityIdentifier("WeightTextField") // Added accessibility identifier
+                                                
                                 .textFieldStyle(.plain)
                                 .padding()
                                 .background(textboxColor)
@@ -92,7 +96,11 @@ struct AddRecordView: View {
                                         .padding()
                                         .background(textboxColor)
                                         .cornerRadius(20.0)
-                                    }
+//                                        .onChange(of: mealValue){ mealValue in
+//                                            recordMeal = mealValue
+//                                        }
+                                    }.accessibilityIdentifier("MealMenu") // Added accessibility identifier
+
                                 }
                                 
                                 TextField("Quantity",text:$quantity).font(.custom("Poppins-SemiBold", size: 15))
@@ -102,6 +110,7 @@ struct AddRecordView: View {
                                     .cornerRadius(20.0)
                                     .keyboardType(.decimalPad)
                                     .frame(width: 100)
+                                    .accessibilityIdentifier("Quantity") // Added accessibility identifier
 
                                 Image("add")
                                     .onTapGesture {
@@ -152,6 +161,7 @@ struct AddRecordView: View {
                                     .cornerRadius(20.0)
                                     .keyboardType(.decimalPad)
                                     .frame(width: 100)
+                                    .accessibilityIdentifier("Reps") // Added accessibility identifier
                                 
                                 Image("add")
                                     .onTapGesture {
@@ -227,22 +237,30 @@ struct AddRecordView: View {
                                     }
                             })
                             {
-                                Text("Submit").font(.custom("Poppins-SemiBold", size: 15)).padding(.horizontal,70)
+                                Text("Submit")
+                                    .accessibilityIdentifier("SubmitButton") // Added accessibility identifier
+                                                        
+                                    .font(.custom("Poppins-SemiBold", size: 15)).padding(.horizontal,70)
                             }
                             .padding()
                             .foregroundColor(.white)
                             .background(Color.black)
                             .cornerRadius(57)
                             .offset(y:15)
+                            
 
                             if(result == "failed"){
                                 Text("Failed to add record")
+                                    .accessibilityIdentifier("ResultText") // Added accessibility identifier
+                                                        
                                     .font(.custom("Poppins-SemiBold", size: 15))
                                     .padding()
                                     .foregroundColor(.red)
                                     .opacity(showText ? 1 : 0)
                             }else if(result == "success"){
                                 Text("Record added!")
+                                    .accessibilityIdentifier("ResultText") // Added accessibility identifier
+                                                        
                                     .font(.custom("Poppins-SemiBold", size: 15))
                                     .padding()
                                     .foregroundColor(.green)
@@ -261,7 +279,11 @@ struct AddRecordView: View {
                 }else{
                     SpinnerView()
                 }
-            }.onTapGesture{hideKeyboard()}
+            }
+            .onTapGesture{
+                hideKeyboard()
+                
+            }
             .task{
                 async let workoutsTask = getWorkouts()
                 async let mealsTask = getMeals()

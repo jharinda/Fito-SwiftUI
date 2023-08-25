@@ -29,6 +29,7 @@ struct AnalysisView: View {
                         Text("Weight distribution")
                             .font(.custom("Poppins-SemiBold", size: 15))
                             .padding(.vertical,10)
+                            .accessibilityIdentifier("WeightDistributionLabel")
                         Chart{
                             if(user?.records?.count ?? 0 > 0){
                                 ForEach((user?.records)!){ record in
@@ -45,7 +46,7 @@ struct AnalysisView: View {
                         Text("Meal calories")
                             .font(.custom("Poppins-SemiBold", size: 15))
                             .padding(.vertical,10)
-                        
+                            .accessibilityIdentifier("MealCaloriesLabel")
                         Chart{
                             if(user?.records?.count ?? 0 > 0){
                                 //RuleMark(y:.value("Goal", 500))
@@ -64,7 +65,7 @@ struct AnalysisView: View {
                         Text("Workouts calories")
                             .font(.custom("Poppins-SemiBold", size: 15))
                             .padding(.vertical,10)
-                        
+                            .accessibilityIdentifier("WorkoutsCaloriesLabel")
                         Chart{
                             if(user?.records?.count ?? 0 > 0){
                                 ForEach((user?.records)!){ record in

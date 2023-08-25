@@ -10,12 +10,12 @@ import SwiftUI
 struct ViewRecordsView: View {
     @AppStorage("currentUserEmail") var currentUserEmail = ""
     
-    @State private var user: User?
+    @State public var user: User?
     
     @State private var result:Bool = false
     @State private var isPresented = false
     
-    @State private var records: [Record]?
+    @State public var records: [Record]?
     
     @State private var backgroundColorList : Color = Color(red: 217/255, green: 217/255, blue: 217/255)
 
@@ -49,6 +49,7 @@ struct ViewRecordsView: View {
                                                         EmptyView()
                                                     }.fixedSize()
                                                         .opacity(0)
+                                                        .accessibilityIdentifier("previewNavigationLink")
                                                 }
                                                 
                                                 Image("delete")
@@ -57,7 +58,7 @@ struct ViewRecordsView: View {
                                                         Task {
                                                             await deleteRecord(id: record.id)
                                                         }
-                                                    }
+                                                    }.accessibilityIdentifier("deleteImage")
                                             }
                                             
                                         }
@@ -164,8 +165,8 @@ struct ViewRecordsView: View {
 struct ViewRecordView: View {
     @State var record: Record
     
-    @State private var meals: [Meal] = []
-    @State private var workouts: [Workout] = []
+    @State public var meals: [Meal] = []
+    @State public var workouts: [Workout] = []
     
     var body: some View {
         ZStack{

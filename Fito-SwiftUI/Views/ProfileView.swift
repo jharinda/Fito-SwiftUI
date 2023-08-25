@@ -44,10 +44,10 @@ struct ProfileView: View {
                     Text("Dashboard")
                         .font(.custom("Poppins-BoldItalic", size: 30))
                         .padding()
-                    Image("logout").onTapGesture {
+                    Image("logout").onTapGesture{
                         currentUserEmail = ""
                         isLoggedOut = true;
-                    }
+                    }.accessibilityIdentifier("LogoutButton")
                 }
                 HStack{
                     Spacer()
@@ -65,9 +65,9 @@ struct ProfileView: View {
                         Text(user.name)
                             .font(.custom("Poppins-SemiBold", size: 30))
                         if(user.gender=="Male"){
-                            Image("male")
+                            Image("male").accessibilityIdentifier("GenderImageMale")
                         }else{
-                            Image("female")
+                            Image("female").accessibilityIdentifier("GenderImageFemale")
                         }
                     }else{
                         SpinnerView()
@@ -83,14 +83,17 @@ struct ProfileView: View {
                             Text("Overweight")
                                 .font(.custom("Poppins-SemiBold", size: 15))
                                 .foregroundColor(.red)
+                                .accessibilityIdentifier("OverweightStatusLabel")
                         }else if(bmiStatus == "Underweight"){
                             Text("Underweight")
                                 .font(.custom("Poppins-SemiBold", size: 15))
                                 .foregroundColor(.red)
+                                .accessibilityIdentifier("UnderweightStatusLabel")
                         }else if(bmiStatus == "Healthy"){
                             Text("Healthy")
                                 .font(.custom("Poppins-SemiBold", size: 15))
                                 .foregroundColor(.green)
+                                .accessibilityIdentifier("HealthyStatusLabel")
                         }
                     }else{
                         Text("BMI Status not available")
@@ -118,7 +121,7 @@ struct ProfileView: View {
                                             radius: 4,
                                             x: 4,
                                             y: 5
-                                        )
+                                        ).accessibilityIdentifier("Metric\(index)View")
                                     VStack{
                                         Text("\(item)")
                                             .font(.custom("Poppins-SemiBold", size: 20))
@@ -259,10 +262,10 @@ struct ProfileView: View {
             }
         
         if(calorieIntake > caloriesBurned){
-            return "G"
+            return "Gaining"
         }
         else{
-            return "L"
+            return "Loosing"
         }
         
         }

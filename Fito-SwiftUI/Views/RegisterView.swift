@@ -27,16 +27,16 @@ struct RegisterView: View {
                 ScrollView{
                     Text("Register").font(.custom("Poppins-BoldItalic", size: 30)).padding(.top,80)
                 
-                TextField("Name",text:$name).font(.custom("Poppins-SemiBold", size: 15)).textFieldStyle(OvalTextFieldStyle())
+                TextField("Name",text:$name).accessibilityIdentifier("NameTextField").font(.custom("Poppins-SemiBold", size: 15)).textFieldStyle(OvalTextFieldStyle())
                     .padding(.vertical,0)
                     .padding(.horizontal,40)
                 
-                TextField("Age",text:$age).font(.custom("Poppins-SemiBold", size: 15)).textFieldStyle(OvalTextFieldStyle())
+                TextField("Age",text:$age).accessibilityIdentifier("AgeTextField").font(.custom("Poppins-SemiBold", size: 15)).textFieldStyle(OvalTextFieldStyle())
                     .keyboardType(.numberPad)
                     .padding(.vertical,0)
                     .padding(.horizontal,40)
                 
-                TextField("Height",text:$height).font(.custom("Poppins-SemiBold", size: 15)).textFieldStyle(OvalTextFieldStyle()).keyboardType(.numberPad)
+                TextField("Height",text:$height).accessibilityIdentifier("HeightTextField").font(.custom("Poppins-SemiBold", size: 15)).textFieldStyle(OvalTextFieldStyle()).keyboardType(.numberPad)
                     .padding(.vertical,0)
                     .padding(.horizontal,40)
                 
@@ -47,8 +47,8 @@ struct RegisterView: View {
                 
                 Picker("", selection: $gender, content: {
                     Text("Gender").tag("Option 1").foregroundColor(.black)
-                    Text("Male").tag("Male")
-                    Text("Female").tag("Female")
+                    Text("Male").tag("Male")//.accessibilityIdentifier("MalePickerOption")
+                    Text("Female").tag("Female")//.accessibilityIdentifier("FemalePickerOption")
                 })
                 .frame(width: 280)
                 .pickerStyle(MenuPickerStyle())
@@ -57,13 +57,14 @@ struct RegisterView: View {
                 .background()
                 .cornerRadius(15)
                 .shadow(color: Color.black.opacity(0.1),radius: 10,x: 4,y:5)
+                .accessibilityIdentifier("GenderPicker")
                 
-                TextField("Email",text:$email).font(.custom("Poppins-SemiBold", size: 15)).textFieldStyle(OvalTextFieldStyle())
+                TextField("Email",text:$email).accessibilityIdentifier("EmailTextField").font(.custom("Poppins-SemiBold", size: 15)).textFieldStyle(OvalTextFieldStyle())
                     .keyboardType(.emailAddress)
                     .padding(.vertical,0)
                     .padding(.horizontal,40)
                 
-                SecureField("Password",text:$password).font(.custom("Poppins-SemiBold", size: 15)).textFieldStyle(OvalTextFieldStyle())
+                SecureField("Password",text:$password).accessibilityIdentifier("PasswordSecureField").font(.custom("Poppins-SemiBold", size: 15)).textFieldStyle(OvalTextFieldStyle())
                     .padding(.vertical,0)
                     .padding(.horizontal,40)
                 
@@ -78,6 +79,7 @@ struct RegisterView: View {
                                 actionPerformed?(.login)
                             }
                         })
+                    .accessibilityIdentifier("LoginButton")
                 }.padding(.vertical,20)
                 Button(action: {
                     print("Register clicked")
@@ -91,8 +93,7 @@ struct RegisterView: View {
                 .background(Color.black)
                 .cornerRadius(57)
                 .offset(y:5)
-                
-                
+                .accessibilityIdentifier("RegisterButton") // Add accessibility identifier
                 
                 if(errorMessage != ""){
                     Text(errorMessage)
@@ -108,11 +109,12 @@ struct RegisterView: View {
                     }
                 }
             }}
-        }.onTapGesture {
+        }
+        .onTapGesture {
             hideKeyboard()
         }
     }
-    @State private var registrationStatus = ""
+    @State public var registrationStatus = ""
     func register(){
         
         let ageInt = Int(age)
@@ -161,7 +163,7 @@ struct RegisterView: View {
         return emailPred.evaluate(with: email)
     }
     
-    private func performRegistration(newUser:User) {
+    public func performRegistration(newUser:User) {
         
         
         guard let url = URL(string: USER_API_URL) else {
