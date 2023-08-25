@@ -16,15 +16,44 @@
 		3DCECDD12A96467200C6B57D /* Fito_SwiftUI_RegisterView_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCECDD02A96467200C6B57D /* Fito_SwiftUI_RegisterView_UITests.swift */; };
 		3DCECDD32A964AE000C6B57D /* Fito_SwiftUI_ProfileView_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCECDD22A964AE000C6B57D /* Fito_SwiftUI_ProfileView_UITests.swift */; };
 		3DCECDD52A964E4F00C6B57D /* Fito_SwiftUI_AddRecordsView_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DCECDD42A964E4F00C6B57D /* Fito_SwiftUI_AddRecordsView_UITests.swift */; };
-		3DCECDD82A96620400C6B57D /* Fito_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C640F2A855D4B0098B2B0 /* Fito_SwiftUITests.swift */; };
+		3DCEF9F22A97B539001D21FB /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C64292A8560200098B2B0 /* GetStartedView.swift */; };
+		3DCEF9F32A97B53C001D21FB /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C64292A8560200098B2B0 /* GetStartedView.swift */; };
+		3DCEF9F42A97B544001D21FB /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C64552A8569660098B2B0 /* RegisterView.swift */; };
+		3DCEF9F52A97B544001D21FB /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C64552A8569660098B2B0 /* RegisterView.swift */; };
+		3DCEF9F62A97B549001D21FB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C64572A856F110098B2B0 /* LoginView.swift */; };
+		3DCEF9F72A97B54A001D21FB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C64572A856F110098B2B0 /* LoginView.swift */; };
+		3DCEF9F82A97B54E001D21FB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E670F2A88BBFD00DD758D /* ProfileView.swift */; };
+		3DCEF9F92A97B54F001D21FB /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E670F2A88BBFD00DD758D /* ProfileView.swift */; };
+		3DCEF9FA2A97B557001D21FB /* ViewRecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB08C72A8B64AC0072F099 /* ViewRecordsView.swift */; };
+		3DCEF9FB2A97B558001D21FB /* ViewRecordsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07AB08C72A8B64AC0072F099 /* ViewRecordsView.swift */; };
+		3DCEF9FC2A97B56F001D21FB /* AddRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07856CC62A8CB5C900A9BC96 /* AddRecordView.swift */; };
+		3DCEF9FD2A97B570001D21FB /* AddRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07856CC62A8CB5C900A9BC96 /* AddRecordView.swift */; };
+		3DCEF9FE2A97B58A001D21FB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C645A2A8570A70098B2B0 /* User.swift */; };
+		3DCEF9FF2A97B58B001D21FB /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C645A2A8570A70098B2B0 /* User.swift */; };
+		3DCEFA002A97C888001D21FB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AB0DD2A879F690038E3AE /* NetworkManager.swift */; };
+		3DCEFA012A97C889001D21FB /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AB0DD2A879F690038E3AE /* NetworkManager.swift */; };
+		3DCEFA042A97C94E001D21FB /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0B5D22A93429900B452CD /* HideKeyboard.swift */; };
+		3DCEFA052A97C94F001D21FB /* HideKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07B0B5D22A93429900B452CD /* HideKeyboard.swift */; };
+		3DCEFA082A97C987001D21FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C64002A855D4B0098B2B0 /* ContentView.swift */; };
+		3DCEFA092A97C988001D21FB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C64002A855D4B0098B2B0 /* ContentView.swift */; };
+		3DCEFA0A2A97CA0D001D21FB /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AB0DF2A87A1A90038E3AE /* Repository.swift */; };
+		3DCEFA0B2A97CA0E001D21FB /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AB0DF2A87A1A90038E3AE /* Repository.swift */; };
+		3DCEFA0C2A97CA85001D21FB /* Fito_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C63FE2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift */; };
+		3DCEFA0D2A97CA86001D21FB /* Fito_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C63FE2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift */; };
+		3DD905142A975DD4003364FD /* Fito_SwiftUI_RegisterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD905132A975DD4003364FD /* Fito_SwiftUI_RegisterTests.swift */; };
+		3DD905162A97682E003364FD /* Fito_SwiftUI_LoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD905152A97682E003364FD /* Fito_SwiftUI_LoginTests.swift */; };
+		3DD905182A976A7F003364FD /* Fito_SwiftUI_ProfileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD905172A976A7F003364FD /* Fito_SwiftUI_ProfileTests.swift */; };
+		3DD9051A2A976CF1003364FD /* Fito_SwiftUI_AddRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD905192A976CF1003364FD /* Fito_SwiftUI_AddRecordTests.swift */; };
+		3DD9051C2A976EB5003364FD /* Fito_SwiftUI_ViewRecordTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9051B2A976EB5003364FD /* Fito_SwiftUI_ViewRecordTests.swift */; };
+		3DD905202A9776D0003364FD /* Fito_SwiftUI_TabBarView_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD9051F2A9776D0003364FD /* Fito_SwiftUI_TabBarView_UITests.swift */; };
+		3DD905222A977778003364FD /* Fito_SwiftUI_ViewRecordsView_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD905212A977778003364FD /* Fito_SwiftUI_ViewRecordsView_UITests.swift */; };
+		3DD905242A97788D003364FD /* Fito_SwiftUI_AnalysisView_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DD905232A97788D003364FD /* Fito_SwiftUI_AnalysisView_UITests.swift */; };
 		DC1AB0DE2A879F690038E3AE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AB0DD2A879F690038E3AE /* NetworkManager.swift */; };
 		DC1AB0E02A87A1A90038E3AE /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1AB0DF2A87A1A90038E3AE /* Repository.swift */; };
 		DC9C63FF2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C63FE2A855D4B0098B2B0 /* Fito_SwiftUIApp.swift */; };
 		DC9C64012A855D4B0098B2B0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C64002A855D4B0098B2B0 /* ContentView.swift */; };
 		DC9C64032A855D4B0098B2B0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC9C64022A855D4B0098B2B0 /* Assets.xcassets */; };
 		DC9C64062A855D4B0098B2B0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC9C64052A855D4B0098B2B0 /* Preview Assets.xcassets */; };
-		DC9C641A2A855D4C0098B2B0 /* Fito_SwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C64192A855D4C0098B2B0 /* Fito_SwiftUIUITests.swift */; };
-		DC9C641C2A855D4C0098B2B0 /* Fito_SwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C641B2A855D4C0098B2B0 /* Fito_SwiftUIUITestsLaunchTests.swift */; };
 		DC9C642A2A8560200098B2B0 /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC9C64292A8560200098B2B0 /* GetStartedView.swift */; };
 		DC9C64432A8564900098B2B0 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC9C64312A85648F0098B2B0 /* Poppins-Black.ttf */; };
 		DC9C64442A8564900098B2B0 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC9C64322A85648F0098B2B0 /* Poppins-Regular.ttf */; };
@@ -96,6 +125,14 @@
 		3DCECDD22A964AE000C6B57D /* Fito_SwiftUI_ProfileView_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fito_SwiftUI_ProfileView_UITests.swift; sourceTree = "<group>"; };
 		3DCECDD42A964E4F00C6B57D /* Fito_SwiftUI_AddRecordsView_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fito_SwiftUI_AddRecordsView_UITests.swift; sourceTree = "<group>"; };
 		3DCECDDD2A96624900C6B57D /* Fito-SwiftUI_UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fito-SwiftUI_UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DD905132A975DD4003364FD /* Fito_SwiftUI_RegisterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fito_SwiftUI_RegisterTests.swift; sourceTree = "<group>"; };
+		3DD905152A97682E003364FD /* Fito_SwiftUI_LoginTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fito_SwiftUI_LoginTests.swift; sourceTree = "<group>"; };
+		3DD905172A976A7F003364FD /* Fito_SwiftUI_ProfileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fito_SwiftUI_ProfileTests.swift; sourceTree = "<group>"; };
+		3DD905192A976CF1003364FD /* Fito_SwiftUI_AddRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fito_SwiftUI_AddRecordTests.swift; sourceTree = "<group>"; };
+		3DD9051B2A976EB5003364FD /* Fito_SwiftUI_ViewRecordTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fito_SwiftUI_ViewRecordTests.swift; sourceTree = "<group>"; };
+		3DD9051F2A9776D0003364FD /* Fito_SwiftUI_TabBarView_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fito_SwiftUI_TabBarView_UITests.swift; sourceTree = "<group>"; };
+		3DD905212A977778003364FD /* Fito_SwiftUI_ViewRecordsView_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fito_SwiftUI_ViewRecordsView_UITests.swift; sourceTree = "<group>"; };
+		3DD905232A97788D003364FD /* Fito_SwiftUI_AnalysisView_UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fito_SwiftUI_AnalysisView_UITests.swift; sourceTree = "<group>"; };
 		DC1AB0DD2A879F690038E3AE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DC1AB0DF2A87A1A90038E3AE /* Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		DC9C63FB2A855D4B0098B2B0 /* Fito-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Fito-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,10 +141,7 @@
 		DC9C64022A855D4B0098B2B0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DC9C64052A855D4B0098B2B0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DC9C640B2A855D4B0098B2B0 /* Fito-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fito-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC9C640F2A855D4B0098B2B0 /* Fito_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fito_SwiftUITests.swift; sourceTree = "<group>"; };
 		DC9C64152A855D4C0098B2B0 /* Fito-SwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Fito-SwiftUIUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DC9C64192A855D4C0098B2B0 /* Fito_SwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fito_SwiftUIUITests.swift; sourceTree = "<group>"; };
-		DC9C641B2A855D4C0098B2B0 /* Fito_SwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fito_SwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DC9C64292A8560200098B2B0 /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
 		DC9C642E2A8562210098B2B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		DC9C64312A85648F0098B2B0 /* Poppins-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Black.ttf"; sourceTree = "<group>"; };
@@ -226,7 +260,11 @@
 		DC9C640E2A855D4B0098B2B0 /* Fito-SwiftUITests */ = {
 			isa = PBXGroup;
 			children = (
-				DC9C640F2A855D4B0098B2B0 /* Fito_SwiftUITests.swift */,
+				3DD905152A97682E003364FD /* Fito_SwiftUI_LoginTests.swift */,
+				3DD905132A975DD4003364FD /* Fito_SwiftUI_RegisterTests.swift */,
+				3DD905192A976CF1003364FD /* Fito_SwiftUI_AddRecordTests.swift */,
+				3DD905172A976A7F003364FD /* Fito_SwiftUI_ProfileTests.swift */,
+				3DD9051B2A976EB5003364FD /* Fito_SwiftUI_ViewRecordTests.swift */,
 			);
 			path = "Fito-SwiftUITests";
 			sourceTree = "<group>";
@@ -234,13 +272,14 @@
 		DC9C64182A855D4C0098B2B0 /* Fito-SwiftUIUITests */ = {
 			isa = PBXGroup;
 			children = (
-				DC9C64192A855D4C0098B2B0 /* Fito_SwiftUIUITests.swift */,
 				3DCECDCC2A9642C100C6B57D /* Fito_SwiftUI_GetStartedView_UITests.swift */,
+				3DD9051F2A9776D0003364FD /* Fito_SwiftUI_TabBarView_UITests.swift */,
+				3DD905212A977778003364FD /* Fito_SwiftUI_ViewRecordsView_UITests.swift */,
+				3DD905232A97788D003364FD /* Fito_SwiftUI_AnalysisView_UITests.swift */,
 				3DCECDD02A96467200C6B57D /* Fito_SwiftUI_RegisterView_UITests.swift */,
 				3DCECDCE2A9643F100C6B57D /* Fito_SwiftUI_LoginView_UITests.swift */,
 				3DCECDD22A964AE000C6B57D /* Fito_SwiftUI_ProfileView_UITests.swift */,
 				3DCECDD42A964E4F00C6B57D /* Fito_SwiftUI_AddRecordsView_UITests.swift */,
-				DC9C641B2A855D4C0098B2B0 /* Fito_SwiftUIUITestsLaunchTests.swift */,
 			);
 			path = "Fito-SwiftUIUITests";
 			sourceTree = "<group>";
@@ -512,10 +551,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3DCEFA042A97C94E001D21FB /* HideKeyboard.swift in Sources */,
+				3DCEFA002A97C888001D21FB /* NetworkManager.swift in Sources */,
 				DCF99D0B2A8B943300D10726 /* AnalysisView.swift in Sources */,
+				3DCEF9F22A97B539001D21FB /* GetStartedView.swift in Sources */,
+				3DCEF9F42A97B544001D21FB /* RegisterView.swift in Sources */,
+				3DD9051C2A976EB5003364FD /* Fito_SwiftUI_ViewRecordTests.swift in Sources */,
+				3DD905182A976A7F003364FD /* Fito_SwiftUI_ProfileTests.swift in Sources */,
 				DCC5795B2A8AA9BB00F4AC17 /* TabBarView.swift in Sources */,
-				3DCECDD82A96620400C6B57D /* Fito_SwiftUITests.swift in Sources */,
+				3DD905142A975DD4003364FD /* Fito_SwiftUI_RegisterTests.swift in Sources */,
+				3DCEFA0A2A97CA0D001D21FB /* Repository.swift in Sources */,
+				3DCEF9F82A97B54E001D21FB /* ProfileView.swift in Sources */,
+				3DCEF9FA2A97B557001D21FB /* ViewRecordsView.swift in Sources */,
+				3DCEFA082A97C987001D21FB /* ContentView.swift in Sources */,
+				3DCEFA0C2A97CA85001D21FB /* Fito_SwiftUIApp.swift in Sources */,
+				3DCEF9F62A97B549001D21FB /* LoginView.swift in Sources */,
+				3DD905162A97682E003364FD /* Fito_SwiftUI_LoginTests.swift in Sources */,
+				3DD9051A2A976CF1003364FD /* Fito_SwiftUI_AddRecordTests.swift in Sources */,
+				3DCEF9FE2A97B58A001D21FB /* User.swift in Sources */,
 				DCC579602A8AC4AD00F4AC17 /* SpinnerView.swift in Sources */,
+				3DCEF9FC2A97B56F001D21FB /* AddRecordView.swift in Sources */,
 				DCF99D0F2A8B996200D10726 /* MockData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -524,17 +579,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC9C641C2A855D4C0098B2B0 /* Fito_SwiftUIUITestsLaunchTests.swift in Sources */,
+				3DCEFA092A97C988001D21FB /* ContentView.swift in Sources */,
 				DCF99D102A8B996200D10726 /* MockData.swift in Sources */,
+				3DCEFA0B2A97CA0E001D21FB /* Repository.swift in Sources */,
 				3DCECDD32A964AE000C6B57D /* Fito_SwiftUI_ProfileView_UITests.swift in Sources */,
 				3DCECDD52A964E4F00C6B57D /* Fito_SwiftUI_AddRecordsView_UITests.swift in Sources */,
+				3DCEFA012A97C889001D21FB /* NetworkManager.swift in Sources */,
+				3DCEF9F32A97B53C001D21FB /* GetStartedView.swift in Sources */,
+				3DCEF9FD2A97B570001D21FB /* AddRecordView.swift in Sources */,
+				3DCEFA052A97C94F001D21FB /* HideKeyboard.swift in Sources */,
 				3DCECDD12A96467200C6B57D /* Fito_SwiftUI_RegisterView_UITests.swift in Sources */,
 				DCC5795C2A8AA9BB00F4AC17 /* TabBarView.swift in Sources */,
+				3DD905242A97788D003364FD /* Fito_SwiftUI_AnalysisView_UITests.swift in Sources */,
+				3DCEFA0D2A97CA86001D21FB /* Fito_SwiftUIApp.swift in Sources */,
 				DCF99D0C2A8B943300D10726 /* AnalysisView.swift in Sources */,
 				DCC579612A8AC4AD00F4AC17 /* SpinnerView.swift in Sources */,
+				3DCEF9F92A97B54F001D21FB /* ProfileView.swift in Sources */,
+				3DCEF9F72A97B54A001D21FB /* LoginView.swift in Sources */,
 				3DCECDCD2A9642C100C6B57D /* Fito_SwiftUI_GetStartedView_UITests.swift in Sources */,
 				3DCECDCF2A9643F100C6B57D /* Fito_SwiftUI_LoginView_UITests.swift in Sources */,
-				DC9C641A2A855D4C0098B2B0 /* Fito_SwiftUIUITests.swift in Sources */,
+				3DD905202A9776D0003364FD /* Fito_SwiftUI_TabBarView_UITests.swift in Sources */,
+				3DCEF9FB2A97B558001D21FB /* ViewRecordsView.swift in Sources */,
+				3DCEF9F52A97B544001D21FB /* RegisterView.swift in Sources */,
+				3DD905222A977778003364FD /* Fito_SwiftUI_ViewRecordsView_UITests.swift in Sources */,
+				3DCEF9FF2A97B58B001D21FB /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@ import SwiftUI
 struct LoginView: View {
     var actionPerformed:((ProjectAction) -> Void)?
     @AppStorage("currentUserEmail") var currentUserEmail = ""
+    @AppStorage("currentUserId") var currentUserId = 0
     @State var email = "";
     @State var password = "";
     @State var errorMessage = ""
@@ -28,12 +29,12 @@ struct LoginView: View {
                     .keyboardType(.emailAddress)
                     .padding(.vertical,0)
                     .padding(.horizontal,40)
-                    .accessibilityIdentifier("EmailTextField") // Added accessibility identifier
+                    .accessibilityIdentifier("EmailTextField1") // Added accessibility identifier
                 
                 SecureField("Password",text:$password).font(.custom("Poppins-SemiBold", size: 15)).textFieldStyle(OvalTextFieldStyle())
                     .padding(.vertical,0)
                     .padding(.horizontal,40)
-                    .accessibilityIdentifier("PasswordSecureField") // Added accessibility identifier
+                    .accessibilityIdentifier("PasswordSecureField1") // Added accessibility identifier
                 
                 HStack{
                     Text("Don't have an account ? ")
@@ -58,6 +59,8 @@ struct LoginView: View {
                 .background(Color.black)
                 .cornerRadius(57)
                 .offset(y:5)
+                .accessibilityIdentifier("LoginButton") // Add accessibility identifier to the Login button
+                
                 
                 NavigationLink(destination: TabBarView().navigationBarBackButtonHidden(true), isActive: $isLoggedIn) { EmptyView() }
                 
@@ -71,7 +74,8 @@ struct LoginView: View {
                 }
                 
             }
-        }.onTapGesture {
+        }
+        .onTapGesture {
             hideKeyboard()
         }
     }
@@ -84,15 +88,15 @@ struct LoginView: View {
     }
     
     func loginAsync(email:String, password:String) -> Bool{
-        @AppStorage("currentUserId") var currentUserId = 0
-        currentUserId = 0;
+       // @AppStorage("currentUserId") var currentUserId = 0
+        //currentUserId = 0;
         var tempUser = User(id: 0, name: "", password:password, email: email, age: 0, heightInCm: 0, gender: "")
         var status = ""
         guard let url = URL(string: USER_API_URL + "/validate") else {
             status = "Invalid URL"
             return false
         }
-        
+
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

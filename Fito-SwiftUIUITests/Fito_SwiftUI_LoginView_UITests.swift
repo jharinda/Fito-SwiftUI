@@ -4,34 +4,38 @@
 //
 //  Created by user235431 on 8/23/23.
 //
-
 import XCTest
+import SwiftUI
+@testable import Fito_SwiftUI
+//@testable import Model
 
 final class Fito_SwiftUI_LoginView_UITests: XCTestCase {
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    var app: XCUIApplication!
 
-        // In UI tests it is usually best to stop immediately when a failure occurs.
-        continueAfterFailure = false
+        override func setUpWithError() throws {
+            continueAfterFailure = false
+            app = XCUIApplication()
+            app.launch()
+        }
 
-        // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    }
+        func testLoginViewUI() throws {
+            app.buttons["GetStartedButton"].tap()
+            app.buttons["LoginButton"].tap()
+            Thread.sleep(forTimeInterval: 5)
+            let emailTextField = app.textFields["EmailTextField1"]
+            XCTAssertTrue(emailTextField.exists)
+            emailTextField.tap()
+            emailTextField.typeText("john@example.com")
 
-    override func tearDownWithError() throws {
-    }
+            let passwordSecureField = app.secureTextFields["PasswordSecureField1"]
+            XCTAssertTrue(passwordSecureField.exists)
+            passwordSecureField.tap()
+            passwordSecureField.typeText("password123")
 
-//    func testExample() throws {
-//        let app = XCUIApplication()
-//        app.launch()
-//
-//    }
+            // Tap the Login button
+            app.buttons["LoginButton"].tap()
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-              measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
         }
     }
-}
+

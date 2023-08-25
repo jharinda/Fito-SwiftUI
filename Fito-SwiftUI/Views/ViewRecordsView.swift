@@ -10,12 +10,12 @@ import SwiftUI
 struct ViewRecordsView: View {
     @AppStorage("currentUserEmail") var currentUserEmail = ""
     
-    @State private var user: User?
+    @State public var user: User?
     
     @State private var result:Bool = false
     @State private var isPresented = false
     
-    @State private var records: [Record]?
+    @State public var records: [Record]?
     
     @State private var backgroundColorList : Color = Color(red: 217/255, green: 217/255, blue: 217/255)
 
@@ -24,7 +24,7 @@ struct ViewRecordsView: View {
         VStack{
                 HStack{
                     Text("Records")
-                        .font(.custom("Poppins-BoldItalic", size: 40))
+                        .font(.custom("Poppins-BoldItalic", size: 30))
                         .padding()
                 }
                 
@@ -32,21 +32,24 @@ struct ViewRecordsView: View {
                     Spacer()
                         if(result){
                             if(user?.records != []){
-                            List{
+                                List{
                                     ForEach(user?.records ?? [], id: \.self) { record in
+                                        if(record.recordWiseMeals != [] && record.recordWiseWorkouts != []){
                                         HStack{
                                             Text(record.date.components(separatedBy: "T").first ?? "")
-                                                .font(.custom("Poppins", size: 15))
+                                                .font(.custom("Poppins-SemiBold", size: 15))
                                                 .padding()
                                             
                                             Spacer()
                                             HStack{
                                                 ZStack {
-                                                    Text("Preview")
+                                                    //Text("Preview")
+                                                    Image(systemName: "eye")
                                                     NavigationLink(destination:ViewRecordView(record: record)) {
                                                         EmptyView()
                                                     }.fixedSize()
-                                                    .opacity(0)
+                                                        .opacity(0)
+                                                        .accessibilityIdentifier("previewNavigationLink")
                                                 }
                                                 
                                                 Image("delete")
@@ -55,7 +58,7 @@ struct ViewRecordsView: View {
                                                         Task {
                                                             await deleteRecord(id: record.id)
                                                         }
-                                                    }
+                                                    }.accessibilityIdentifier("deleteImage")
                                             }
                                             
                                         }
@@ -66,14 +69,16 @@ struct ViewRecordsView: View {
                                                 .foregroundColor(backgroundColorList)
                                                 .padding(
                                                     EdgeInsets(
-                                                        top: 2,
+                                                        top: 5,
                                                         leading: 16,
-                                                        bottom: 2,
+                                                        bottom: 5,
                                                         trailing: 16
                                                     )
                                                 )
                                         )
                                     }
+                                    
+                                }
                                 }.scrollContentBackground(.hidden)
                             }
                             else{
@@ -139,6 +144,7 @@ struct ViewRecordsView: View {
             let decodedUsers = try JSONDecoder().decode(User.self, from: data)
             DispatchQueue.main.async {
                 user = decodedUsers
+                print(user)
             }
             
         }catch{
@@ -159,61 +165,112 @@ struct ViewRecordsView: View {
 struct ViewRecordView: View {
     @State var record: Record
     
-    @State private var meals: [Meal] = []
-    @State private var workouts: [Workout] = []
+    @State public var meals: [Meal] = []
+    @State public var workouts: [Workout] = []
     
     var body: some View {
-        VStack{
-            ScrollView(.vertical){
-                Text("Date: \(record.date.components(separatedBy: "T").first ?? "")")
-                    .font(.custom("Poppins", size: 20))
-                    .padding()
-                Text("Weight: \(record.weight, specifier: "%.2f")")
-                    .font(.custom("Poppins", size: 20))
+        ZStack{
+           
+            VStack{
+                Text("Record Details")  .font(.custom("Poppins-BoldItalic", size: 30))
                     .padding()
                 
-                Text("Meals")
-                    .font(.custom("Poppins", size: 20))
-                    .padding()
-                
-                if(!meals.isEmpty && !workouts.isEmpty){
-                    ForEach(record.recordWiseMeals, id: \.id) { mealwiseRecord in
-                        if let matchedMeal = meals.first(where: { $0.id == mealwiseRecord.mealId }) {
-                            VStack{
-                                let calories = mealwiseRecord.mealQuantity * matchedMeal.kalCount
-                                Text("Meal: \(matchedMeal.name)")
-                                Text("Calories: \(calories)")
-                            }.padding()
+                ScrollView(.vertical){
+                    VStack(alignment: .center){
+                        VStack(alignment: .leading){
+                            HStack{
+                                Image(systemName: "calendar.circle.fill")
+                                    .foregroundStyle(.cyan.gradient)
+                                    .font(.system(size: 25))
+                                Text("\(record.date.components(separatedBy: "T").first ?? "")")
+                                    .font(.custom("Poppins-SemiBold", size: 20))
+                                    .padding()
+                                
+                            }
+                            HStack{
+                                Image(systemName: "person.circle.fill")
+                                    .foregroundStyle(.red.gradient)
+                                    .font(.system(size: 25))
+                                Text("\(record.weight, specifier: "%.2f") Kg")
+                                    .font(.custom("Poppins-SemiBold", size: 20))
+                                    .padding()
+                                
+                                
+                            }
+                            
+                        }
+                        HStack{
+                            Text("Meals")
+                                .font(.custom("Poppins-BoldItalic", size: 20))
+                            Image(systemName: "leaf.fill")
+                                .foregroundStyle(Color.green.gradient)
+                                .font(.system(size: 30))
+                        }.padding(.top,20)
+                        
+                        if(!meals.isEmpty && !workouts.isEmpty){
+                            ForEach(record.recordWiseMeals, id: \.id) { mealwiseRecord in
+                                if let matchedMeal = meals.first(where: { $0.id == mealwiseRecord.mealId }) {
+                                    VStack{
+                                        let calories = mealwiseRecord.mealQuantity * matchedMeal.kalCount
+                                        HStack{
+                                            Image(systemName: "circle.fill").foregroundStyle(.white.gradient)
+                                            Text("\(matchedMeal.name) x \(mealwiseRecord.mealQuantity) ")
+                                                .font(.custom("Poppins-SemiBold", size: 15))
+                                            Image(systemName: "arrow.right.circle.fill").foregroundStyle(.purple.gradient)
+                                            Text("\(calories) Kcal")
+                                                .font(.custom("Poppins-SemiBold", size: 15))
+                                        }
+                                    }.padding()
+                                }
+                            }
+                            
+                            HStack{
+                                Text("Workouts")
+                                    .font(.custom("Poppins-BoldItalic", size: 20))
+                                    
+                                Image(systemName: "dumbbell.fill")
+                                    .foregroundStyle(.black.gradient)
+                                    .font(.system(size: 30))
+                                
+                            }.padding(.top,20)
+                            ForEach(record.recordWiseWorkouts, id: \.recordId) { workoutwiseRecord in
+                                if let matchedWorkout = workouts.first(where: { $0.id == workoutwiseRecord.workoutId }) {
+                                    HStack{
+                                        let calories = workoutwiseRecord.reps * matchedWorkout.kalCount
+                                        Image(systemName: "circle.fill").foregroundColor(.white)
+                                        Text("\(matchedWorkout.name) x \(workoutwiseRecord.reps)")
+                                            .font(.custom("Poppins-SemiBold", size: 15))
+                                        
+                                        Image(systemName: "arrow.right.circle.fill")
+                                            .foregroundStyle(.purple.gradient)
+                                        
+                                        Text("\(calories) Kcal")
+                                            .font(.custom("Poppins-SemiBold", size: 15))
+                                    }.padding()
+                                }
+                            }
+                            
+                        }else{
+                            SpinnerView()
+                                .padding()
                         }
                     }
-                    
-                    
-                    Text("Workouts")
-                        .font(.custom("Poppins", size: 20))
-                        .padding()
-                    ForEach(record.recordWiseWorkouts, id: \.recordId) { workoutwiseRecord in
-                        if let matchedWorkout = workouts.first(where: { $0.id == workoutwiseRecord.workoutId }) {
-                            VStack{
-                                let calories = workoutwiseRecord.reps * matchedWorkout.kalCount
-                                Text("Workout: \(matchedWorkout.name)")
-                                Text("Calories: \(calories)")
-                            }.padding()
-                        }
-                    }
-                    
-                }else{
-                    SpinnerView()
-                        .padding()
                 }
+                Spacer()
+                
             }
-            Spacer()
+            .scrollIndicators(.hidden)
             
-        }
-        .scrollIndicators(.hidden)
-        .task {
-            await getMeals()
-            await getWorkouts()
-        }
+           
+            .task {
+                await getMeals()
+                await getWorkouts()
+            }
+        } .frame(width: UIScreen.main.bounds.width)
+        .background(.yellow)
+        
+           
+        
     }
     
     func getMeals() async{

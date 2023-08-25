@@ -8,32 +8,32 @@
 import SwiftUI
 
 struct TabBarView: View {
-    @State private var selectedIndex = 0
+    @State private var selectedIndex = 3
     var body: some View {
         TabView(selection: $selectedIndex) {
                     AddRecordView()
                         .tag(0)
                         .tabItem {
                             Label("", systemImage: "plus.circle.fill")
-                        }
+                        }.accessibilityIdentifier("addRecordButton")
                     
                     ViewRecordsView()
                         .tag(1)
                         .tabItem {
                             Label("", systemImage: "list.bullet.rectangle")
-                        }
+                        }.accessibilityIdentifier("viewRecordsButton")
                     
-            AnalysisView().frame(height: 700)
+                    AnalysisView()
                         .tag(2)
                         .tabItem {
                             Label("", systemImage: "chart.bar.fill")
-                        }
+                        }.accessibilityIdentifier("analyzeDataButton")
                     
                     ProfileView()
                         .tag(3)
                         .tabItem {
                             Label("", systemImage: "person.crop.circle")
-                        }
+                        }.accessibilityIdentifier("viewProfileButton")
                 }
         .accentColor(.orange)
         
@@ -44,37 +44,5 @@ struct TabBarView: View {
 struct TabBarView_Previews: PreviewProvider {
     static var previews: some View {
         TabBarView()
-    }
-}
-
-struct FirstView: View {
-    var body: some View {
-        Text("First View")
-            .background(Color.red)
-            .navigationBarTitle("First", displayMode: .inline)
-    }
-}
-
-struct SecondView: View {
-    var body: some View {
-        Text("Second View")
-            .background(Color.green)
-            .navigationBarTitle("Second", displayMode: .inline)
-    }
-}
-
-struct ThirdView: View {
-    var body: some View {
-        Text("Third View")
-            .background(Color.blue)
-            .navigationBarTitle("Third", displayMode: .inline)
-    }
-}
-
-struct FourthView: View {
-    var body: some View {
-        Text("Fourth View")
-            .background(Color.purple)
-            .navigationBarTitle("Fourth", displayMode: .inline)
     }
 }
